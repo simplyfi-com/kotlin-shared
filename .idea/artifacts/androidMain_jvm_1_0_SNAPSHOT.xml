@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="androidMain-jvm-1.0-SNAPSHOT">
+    <output-path>$PROJECT_DIR$/androidMain/build/libs</output-path>
+    <root id="archive" name="androidMain-jvm-1.0-SNAPSHOT.jar">
+      <element id="module-output" name="kotlin-shared.androidMain.jvmMain" />
+    </root>
+  </artifact>
+</component>
