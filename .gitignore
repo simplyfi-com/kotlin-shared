@@ -40,7 +40,17 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Kotlin ###
 local.properties
-**/*/res/values/secrets.xml
+**/*/res*/MR/**/values/*.xml
+**/*/res*/**/values/secrets.xml
 *.hprof
-*.hprof
+
+### iOS ###
+sample/iosApp/Podfile.lock
+sample/iosApp/Pods/*
+sample/iosApp/sample.xcworkspace/*
+sample/iosApp/sample.xcodeproj/*
+!sample/iosApp/sample.xcodeproj/project.pbxproj
+**/*.podspec

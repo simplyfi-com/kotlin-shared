@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+
+target 'sample' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  platform :ios, '17.0'
+
+  # Pods for sample
+
+  target 'sampleTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'sampleUITests' do
+    # Pods for testing
+  end
+
+  pod 'shared', :path => '../shared'
+end

@@ -4,4 +4,12 @@ plugins {
     alias(libs.plugins.android.library).apply(false)
     alias(libs.plugins.android.application).apply(false)
     alias(libs.plugins.jetbrains.compose).apply(false)
+    alias(libs.plugins.kotlin.native.cocoapods).apply(false)
+    alias(libs.plugins.multiplatform.resources).apply(false)
+}
+
+buildscript {
+    dependencies {
+        classpath(libs.resources.generator)
+    }
 }

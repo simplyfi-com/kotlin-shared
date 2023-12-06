@@ -14,10 +14,6 @@ fun View(
     onDispose: () -> Unit = {},
 ) {
     val state = rememberWebViewState(config.url)
-    state.webSettings.androidWebSettings.apply {
-        this.domStorageEnabled = true
-        this.allowFileAccess = true
-    }
     val navigator = rememberWebViewNavigator()
 
     WebView(

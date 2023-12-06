@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.plugins.serialization)
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.compose)
+    alias(libs.plugins.kotlin.native.cocoapods)
 }
 
 group = "com.simplyfi"
@@ -36,8 +37,22 @@ kotlin {
     androidTarget {
         compilations.all {
             kotlinOptions {
-                jvmTarget = "1.8"
+                (findProperty("android.jvmTarget") as String?)?.let { jvmTarget = it }
             }
+        }
+    }
+
+    ios()
+    iosSimulatorArm64()
+
+    cocoapods {
+        homepage = "https://gitlab.tenderhub.net/tenderhub/kotlin-shared"
+        summary = "SimplyFi SDK"
+        version = "1.0"
+        ios.deploymentTarget = "17.0"
+        framework {
+            baseName = "sdk"
+            isStatic = true
         }
     }
 
@@ -49,8 +64,9 @@ kotlin {
                 api(libs.core.ktx)
                 implementation(compose.runtime)
                 implementation(compose.foundation)
+                implementation(compose.material3)
                 implementation(libs.compose.webview)
-                implementation(libs.ktor.client.cio)
+                implementation(libs.ktor.client.okhttp)
             }
         }
         val androidUnitTest by getting
@@ -72,7 +88,7 @@ kotlin {
         }
         val jvmMain by getting {
             dependencies {
-                implementation(libs.ktor.client.cio)
+                implementation(libs.ktor.client.okhttp)
             }
         }
         val jvmTest by getting
@@ -82,25 +98,40 @@ kotlin {
             }
         }
         val jsTest by getting
+        val iosX64Main by getting
+        val iosArm64Main by getting
+        val iosMain by getting {
+            dependsOn(commonMain)
+            dependencies {
+                implementation(compose.runtime)
+                implementation(compose.foundation)
+                implementation(compose.material3)
+                implementation(libs.compose.webview)
+                implementation(libs.ktor.client.darwin)
+            }
+        }
+        val iosSimulatorArm64Main by getting {
+            dependsOn(iosMain)
+        }
     }
 }
 
 android {
     namespace = "com.simplyfi.sdk"
-    compileSdk = 34
+    compileSdk = (findProperty("android.compileSdk") as String?)?.toInt()
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
     defaultConfig {
-        minSdk = 24
+        minSdk = (findProperty("android.minSdk") as String?)?.toInt()
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        findProperty("android.sourceCompatibility")?.let { sourceCompatibility(it) }
+        findProperty("android.targetCompatibility")?.let { sourceCompatibility(it) }
     }
 
     kotlin {
-        jvmToolchain(8)
+        (findProperty("android.jdkVersion") as String?)?.toInt()?.let { jvmToolchain(it) }
     }
 }

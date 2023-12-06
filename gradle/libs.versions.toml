@@ -2,23 +2,24 @@
 activity-compose = "1.8.1"
 core-ktx = "1.12.0"
 appcompat = "1.6.1"
-kotlin = "1.9.10"
+kotlin = "1.9.21"
 ktor = "2.3.6"
 coroutines = "1.7.3"
 serialization = "1.6.0"
 datetime = "0.4.1"
-android = "8.2.0"
+android = "8.1.4"
 webview = "1.7.4"
-compose = "1.5.1"
-material3 = "1.2.0-alpha12"
-compose-navigation = "2.7.5"
+compose = "1.5.11"
+resources = "0.23.0"
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-plugins-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-native-cocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "android" }
 android-application = { id = "com.android.application", version.ref = "android" }
 jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+multiplatform-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "resources" }
 
 [libraries]
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
@@ -26,6 +27,8 @@ core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
@@ -35,7 +38,8 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "datetime" }
 kotlinx-datetime-jvm = { module = "org.jetbrains.kotlinx:kotlinx-datetime-jvm", version.ref = "datetime" }
 compose-webview = { module = "io.github.kevinnzou:compose-webview-multiplatform", version.ref = "webview" }
+resources-generator = { module = "dev.icerock.moko:resources-generator", version.ref = "resources" }
 ui-test-junit = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose"}
 ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
-compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "compose-navigation" }
+resources = { module = "dev.icerock.moko:resources", version.ref = "resources" }
+resources-compose = { module = "dev.icerock.moko:resources-compose", version.ref = "resources" }
