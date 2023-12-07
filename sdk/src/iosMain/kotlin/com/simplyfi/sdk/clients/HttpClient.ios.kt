@@ -6,4 +6,4 @@ import io.ktor.client.HttpClientConfig
 import io.ktor.client.engine.darwin.Darwin
 
 actual fun httpClient(config: Config, clientConfig: HttpClientConfig<*>.() -> Unit): HttpClient =
-    HttpClient(Darwin)
+    HttpClient(Darwin, clientConfig)
