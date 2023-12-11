@@ -42,22 +42,25 @@ kotlin {
         }
     }
 
-    ios()
+    iosX64()
+    iosArm64()
     iosSimulatorArm64()
 
     cocoapods {
         homepage = "https://gitlab.tenderhub.net/tenderhub/kotlin-shared"
         summary = "SimplyFi SDK"
         version = "1.0"
-        ios.deploymentTarget = "17.0"
+        ios.deploymentTarget = "16.4"
         framework {
             baseName = "sdk"
             isStatic = true
         }
     }
 
+    applyDefaultHierarchyTemplate()
+
     sourceSets {
-        val androidMain by getting {
+        androidMain {
             dependencies {
                 api(libs.activity.compose)
                 api(libs.appcompat)
@@ -70,7 +73,7 @@ kotlin {
             }
         }
         val androidUnitTest by getting
-        val commonMain by getting {
+        commonMain {
             dependencies {
                 implementation(libs.kotlinx.datetime)
                 implementation(libs.ktor.client.core)
@@ -80,28 +83,25 @@ kotlin {
                 implementation(libs.kotlinx.serialization.json)
             }
         }
-        val commonTest by getting {
+        commonTest {
             dependencies {
                 implementation(kotlin("test"))
                 implementation(libs.kotlinx.coroutines.test)
             }
         }
-        val jvmMain by getting {
+        jvmMain {
             dependencies {
                 implementation(libs.ktor.client.okhttp)
             }
         }
-        val jvmTest by getting
-        val jsMain by getting {
+        jvmTest {}
+        jsMain {
             dependencies {
                 implementation(libs.ktor.client.js)
             }
         }
-        val jsTest by getting
-        val iosX64Main by getting
-        val iosArm64Main by getting
-        val iosMain by getting {
-            dependsOn(commonMain)
+        jsTest {}
+        iosMain {
             dependencies {
                 implementation(compose.runtime)
                 implementation(compose.foundation)
@@ -109,9 +109,6 @@ kotlin {
                 implementation(libs.compose.webview)
                 implementation(libs.ktor.client.darwin)
             }
-        }
-        val iosSimulatorArm64Main by getting {
-            dependsOn(iosMain)
         }
     }
 }

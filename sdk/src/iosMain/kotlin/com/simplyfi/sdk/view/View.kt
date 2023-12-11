@@ -2,10 +2,21 @@ package com.simplyfi.sdk.view
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.multiplatform.webview.web.WebView
-import com.multiplatform.webview.web.rememberWebViewNavigator
+import androidx.compose.ui.interop.UIKitView
+import com.multiplatform.webview.web.IOSWebView
+import com.multiplatform.webview.web.WebContent
 import com.multiplatform.webview.web.rememberWebViewState
+import kotlinx.cinterop.ExperimentalForeignApi
+import kotlinx.cinterop.readValue
+import platform.CoreGraphics.CGRectZero
+import platform.Foundation.setValue
+import platform.WebKit.WKUserScript
+import platform.WebKit.WKUserScriptInjectionTime
+import platform.WebKit.WKWebView
+import platform.WebKit.WKWebViewConfiguration
+import platform.WebKit.javaScriptEnabled
 
+@OptIn(ExperimentalForeignApi::class)
 @Composable
 fun View(
     config: Config,
@@ -14,19 +25,41 @@ fun View(
     onDispose: () -> Unit = {},
 ) {
     val state = rememberWebViewState(config.url)
-    val navigator = rememberWebViewNavigator()
 
-    WebView(
-        state,
-        modifier,
-        config.captureBackPress,
-        navigator,
-        onCreated = {
-            navigator.evaluateJavaScript(
-                """localStorage.setItem('${config.tokenKey}', '"${config.token}"')"""
+    UIKitView(
+        factory = {
+            val userScript = WKUserScript(
+                """localStorage.setItem('${config.tokenKey}', '"${config.token}"')""",
+                WKUserScriptInjectionTime.WKUserScriptInjectionTimeAtDocumentStart,
+                true
             )
-            onCreated()
+
+            val wkWebViewConfiguration =
+                WKWebViewConfiguration().apply {
+                    allowsInlineMediaPlayback = true
+                    defaultWebpagePreferences.allowsContentJavaScript = state.webSettings.isJavaScriptEnabled
+                    preferences.apply {
+                        setValue(state.webSettings.allowFileAccessFromFileURLs, forKey = "allowFileAccessFromFileURLs")
+                        javaScriptEnabled = state.webSettings.isJavaScriptEnabled
+                    }
+                    setValue(state.webSettings.allowUniversalAccessFromFileURLs, forKey = "allowUniversalAccessFromFileURLs")
+                    userContentController.addUserScript(userScript)
+                }
+            WKWebView(
+                frame = CGRectZero.readValue(),
+                configuration = wkWebViewConfiguration,
+            ).apply {
+                userInteractionEnabled = true
+                allowsBackForwardNavigationGestures = true
+                customUserAgent = state.webSettings.customUserAgentString
+            }.also {
+                IOSWebView(it).loadUrl((state.content as WebContent.Url).url, (state.content as WebContent.Url).additionalHttpHeaders)
+                onCreated()
+            }
         },
-        onDispose
+        modifier = modifier,
+        onRelease = {
+            onDispose()
+        },
     )
 }
