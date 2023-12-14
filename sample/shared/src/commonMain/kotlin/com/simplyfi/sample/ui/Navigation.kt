@@ -1,21 +1,17 @@
 package com.simplyfi.sample.ui
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.saveable.rememberSaveableStateHolder
-import androidx.compose.ui.Modifier
+import com.simplyfi.sample.models.Route
 
 @Composable
-fun <T : Any> Navigation(
-    currentScreen: T,
-    modifier: Modifier = Modifier,
-    content: @Composable (T) -> Unit
+fun Navigation(
+    currentScreen: Route,
+    content: @Composable (Route) -> Unit
 ) {
     val saveableStateHolder = rememberSaveableStateHolder()
 
-    Box(modifier) {
-        saveableStateHolder.SaveableStateProvider(currentScreen) {
-            content(currentScreen)
-        }
+    saveableStateHolder.SaveableStateProvider(currentScreen) {
+        content(currentScreen)
     }
 }

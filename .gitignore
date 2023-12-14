@@ -55,3 +55,5 @@ sample/iosApp/sample.xcodeproj/*
 !sample/iosApp/sample.xcodeproj/project.pbxproj
 **/*.podspec
 sample/shared/src/commonMain/resources/MR/base/strings.xml
+**/*.config.d/moko-resources-generated.js
+**/resources/config.json

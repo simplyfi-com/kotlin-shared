@@ -16,6 +16,9 @@ kotlin {
     sourceSets {
         val androidMain by getting {
             dependencies {
+                implementation(libs.activity.compose)
+                implementation(libs.appcompat)
+                implementation(libs.core.ktx)
                 implementation(project(":sample:shared"))
             }
         }

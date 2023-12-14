@@ -9,9 +9,8 @@ data class Routine(val name: String, val comment: String, val params: Array<Para
 
         if (name != other.name) return false
         if (comment != other.comment) return false
-        if (!params.contentEquals(other.params)) return false
 
-        return true
+        return params.contentEquals(other.params)
     }
 
     override fun hashCode(): Int {

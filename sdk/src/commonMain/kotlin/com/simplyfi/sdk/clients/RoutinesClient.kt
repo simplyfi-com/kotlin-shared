@@ -12,11 +12,17 @@ class RoutinesClient(config: Config) {
         return httpClient.get(name, token)
     }
 
-    suspend fun execute(name: String, payload: RoutineExecute, token: String? = null): RunnableResult {
+    suspend fun execute(
+        name: String,
+        payload: RoutineExecute,
+        token: String? = null
+    ): RunnableResult {
         return httpClient.post("$name/execute", payload, token)
     }
 
-    suspend fun execute(name: String, vararg params: String, token: String? = null): RunnableResult {
-        return httpClient.post("$name/execute", RoutineExecute(params), token)
-    }
+    suspend fun execute(
+        name: String,
+        vararg params: String,
+        token: String? = null
+    ): RunnableResult = execute(name, RoutineExecute(params), token)
 }

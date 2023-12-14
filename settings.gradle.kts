@@ -1,6 +1,7 @@
 include(":sdk")
 include(":sample:shared")
 include(":sample:androidApp")
+include(":sample:webApp")
 
 pluginManagement {
     repositories {

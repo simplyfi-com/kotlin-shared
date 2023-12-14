@@ -18,11 +18,11 @@ import platform.WebKit.javaScriptEnabled
 
 @OptIn(ExperimentalForeignApi::class)
 @Composable
-fun View(
+actual fun View(
     config: Config,
-    modifier: Modifier = Modifier,
-    onCreated: () -> Unit = {},
-    onDispose: () -> Unit = {},
+    modifier: Modifier,
+    onCreated: () -> Unit,
+    onDispose: () -> Unit,
 ) {
     val state = rememberWebViewState(config.url)
 

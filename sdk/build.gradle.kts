@@ -17,21 +17,10 @@ repositories {
 kotlin {
     jvm {
         jvmToolchain(8)
-        testRuns.named("test") {
-            executionTask.configure {
-                useJUnitPlatform()
-            }
-        }
     }
 
-    js {
-        nodejs {
-            testTask(Action {
-                useMocha {
-                    timeout = 180000.toString()
-                }
-            })
-        }
+    js("browser") {
+        browser()
     }
 
     androidTarget {
@@ -60,19 +49,22 @@ kotlin {
     applyDefaultHierarchyTemplate()
 
     sourceSets {
-        androidMain {
+        val uiMain by creating {
             dependencies {
-                api(libs.activity.compose)
-                api(libs.appcompat)
-                api(libs.core.ktx)
                 implementation(compose.runtime)
                 implementation(compose.foundation)
-                implementation(compose.material3)
-                implementation(libs.compose.webview)
-                implementation(libs.ktor.client.okhttp)
             }
         }
-        val androidUnitTest by getting
+        val mobileMain by creating {
+            dependencies {
+                implementation(compose.material3)
+                implementation(libs.compose.webview)
+            }
+            dependsOn(uiMain)
+        }
+        androidMain {
+            dependsOn(mobileMain)
+        }
         commonMain {
             dependencies {
                 implementation(libs.kotlinx.datetime)
@@ -82,26 +74,29 @@ kotlin {
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.kotlinx.serialization.json)
             }
-        }
-        commonTest {
-            dependencies {
-                implementation(kotlin("test"))
-                implementation(libs.kotlinx.coroutines.test)
-            }
+            uiMain.dependsOn(this)
         }
         jvmMain {
             dependencies {
                 implementation(libs.ktor.client.okhttp)
             }
         }
-        jvmTest {}
-        jsMain {
+        val browserMain by getting {
+            dependsOn(uiMain)
             dependencies {
-                implementation(libs.ktor.client.js)
+                implementation(libs.ksoup)
             }
         }
-        jsTest {}
+        jsMain {
+            dependsOn(commonMain.get())
+            dependencies {
+                implementation(libs.ktor.client.js)
+                implementation(compose.html.core)
+            }
+            browserMain.dependsOn(this)
+        }
         iosMain {
+            dependsOn(mobileMain)
             dependencies {
                 implementation(compose.runtime)
                 implementation(compose.foundation)

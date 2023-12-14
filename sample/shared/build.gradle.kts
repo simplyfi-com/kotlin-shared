@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.multiplatform.resources)
 }
 
+
 kotlin {
     androidTarget {
         compilations.all {
@@ -12,6 +13,10 @@ kotlin {
                 (findProperty("android.jvmTarget") as String?)?.let { jvmTarget = it }
             }
         }
+    }
+
+    js(IR) {
+        browser()
     }
 
     listOf(
@@ -30,16 +35,22 @@ kotlin {
             dependencies {
                 implementation(compose.runtime)
                 implementation(compose.foundation)
-                implementation(compose.material3)
-                implementation(compose.ui)
                 implementation(libs.kotlinx.datetime)
-                api(project(":sdk"))
                 api(libs.resources)
                 api(libs.resources.compose)
+                api(project(":sdk"))
+            }
+        }
+        val mobileMain by creating {
+            dependsOn(commonMain)
+            dependencies {
+                implementation(compose.ui)
+                implementation(compose.material3)
             }
         }
         val androidMain by getting {
             dependsOn(commonMain)
+            dependsOn(mobileMain)
             dependencies {
                 implementation(libs.appcompat)
                 implementation(libs.activity.compose)
@@ -52,9 +63,16 @@ kotlin {
         val iosSimulatorArm64Main by getting
         val iosMain by creating {
             dependsOn(commonMain)
+            dependsOn(mobileMain)
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+        }
+        val jsMain by getting {
+            dependsOn(commonMain)
+            dependencies {
+                implementation(compose.html.core)
+            }
         }
     }
 }
@@ -62,8 +80,6 @@ kotlin {
 android {
     namespace = "com.simplyfi.sample"
     compileSdk = (findProperty("android.compileSdk") as String?)?.toInt()
-
-    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
     defaultConfig {
         minSdk = (findProperty("android.minSdk") as String?)?.toInt()
@@ -81,5 +97,4 @@ android {
 
 multiplatformResources {
     multiplatformResourcesPackage = "com.simplyfi.sample"
-    multiplatformResourcesSourceSet = "commonMain"
 }
