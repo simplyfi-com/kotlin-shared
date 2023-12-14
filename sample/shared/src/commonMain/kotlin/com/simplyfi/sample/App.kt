@@ -10,12 +10,13 @@ import com.simplyfi.sample.models.Route
 import com.simplyfi.sample.ui.*
 import com.simplyfi.sdk.view.Config
 import com.simplyfi.sdk.view.View
+import com.simplyfi.sdk.view.ViewStrategy
 import dev.icerock.moko.resources.compose.stringResource
 
 fun noop(route: Route) {}
 
 @Composable
-fun App(routeChange: (route: Route) -> Unit = { noop(it) }) {
+fun App(viewStrategy: ViewStrategy = ViewStrategy.EMBED, routeChange: (route: Route) -> Unit = { noop(it) }) {
     var token by rememberSaveable { mutableStateOf("") }
     var route by rememberSaveable { mutableStateOf(Route.Register) }
     val apiUrl = stringResource(MR.strings.API_URL)
@@ -40,7 +41,7 @@ fun App(routeChange: (route: Route) -> Unit = { noop(it) }) {
                 }
 
                 Route.Onboarding -> View(
-                    Config(goUrl, token, viewId = 123)
+                    Config(goUrl, token, strategy = viewStrategy)
                 )
             }
         }

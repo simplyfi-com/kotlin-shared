@@ -119,7 +119,7 @@ actual fun Registration(
                 }
                 Div {
                     Label(forId = "email") {
-                        Text("Phone")
+                        Text("Email")
                     }
                     EmailInput {
                         id("email")
