@@ -193,7 +193,7 @@ actual fun Registration(config: Config, callback: (String, Route) -> Unit) {
             onClick = {
                 composableScope.launch {
                     val result = client.routines.execute(
-                        "PT.05.0002.00.00.0.00.00.001",
+                        "GW.05.0002.00.00.0.00.00.001",
                         companyName,
                         authority,
                         tln,

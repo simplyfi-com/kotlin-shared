@@ -77,69 +77,85 @@ actual fun Registration(
 
         Div {
             Form {
-                Label(forId = "companyName") {
-                    Text("Company name")
+                Div {
+                    Label(forId = "companyName") {
+                        Text("Company name")
+                    }
+                    TextInput {
+                        id("companyName")
+                        value(companyName)
+                        onChange { companyName = it.value }
+                    }
                 }
-                TextInput {
-                    id("companyName")
-                    value(companyName)
-                    onChange { companyName = it.value }
+                Div {
+                    Label(forId = "firstName") {
+                        Text("First name")
+                    }
+                    TextInput {
+                        id("firstName")
+                        value(firstName)
+                        onChange { firstName = it.value }
+                    }
                 }
-                Label(forId = "firstName") {
-                    Text("First name")
+                Div {
+                    Label(forId = "lastName") {
+                        Text("Last name")
+                    }
+                    TextInput {
+                        id("lastName")
+                        value(lastName)
+                        onChange { lastName = it.value }
+                    }
                 }
-                TextInput {
-                    id("firstName")
-                    value(firstName)
-                    onChange { firstName = it.value }
+                Div {
+                    Label(forId = "phone") {
+                        Text("Phone")
+                    }
+                    TelInput {
+                        id("phone")
+                        value(phone)
+                        onChange { phone = it.value }
+                    }
                 }
-                Label(forId = "lastName") {
-                    Text("Last name")
+                Div {
+                    Label(forId = "email") {
+                        Text("Phone")
+                    }
+                    EmailInput {
+                        id("email")
+                        value(email)
+                        onChange { email = it.value }
+                    }
                 }
-                TextInput {
-                    id("lastName")
-                    value(lastName)
-                    onChange { lastName = it.value }
+                Div {
+                    Label(forId = "tln") {
+                        Text("CR")
+                    }
+                    TextInput {
+                        id("tln")
+                        value(tln)
+                        onChange { tln = it.value }
+                    }
                 }
-                Label(forId = "phone") {
-                    Text("Phone")
+                Div {
+                    Label(forId = "secret") {
+                        Text("Password")
+                    }
+                    PasswordInput {
+                        id("secret")
+                        value(secret)
+                        onChange { secret = it.value }
+                    }
                 }
-                TelInput {
-                    id("phone")
-                    value(phone)
-                    onChange { phone = it.value }
-                }
-                Label(forId = "email") {
-                    Text("Phone")
-                }
-                EmailInput {
-                    id("email")
-                    value(email)
-                    onChange { email = it.value }
-                }
-                Label(forId = "tln") {
-                    Text("CR")
-                }
-                TextInput {
-                    id("tln")
-                    value(tln)
-                    onChange { tln = it.value }
-                }
-                Label(forId = "secret") {
-                    Text("Password")
-                }
-                PasswordInput {
-                    id("secret")
-                    value(secret)
-                    onChange { secret = it.value }
-                }
-                Label(forId = "compareSecret") {
-                    Text("Repeat Password")
-                }
-                PasswordInput {
-                    id("compareSecret")
-                    value(compareSecret)
-                    onChange { compareSecret = it.value }
+                Div {
+                    Label(forId = "compareSecret") {
+                        Text("Repeat Password")
+                    }
+                    PasswordInput {
+                        id("compareSecret")
+                        value(compareSecret)
+                        onChange { compareSecret = it.value }
+                    }
                 }
             }
 
@@ -150,7 +166,7 @@ actual fun Registration(
                     onClick {
                         composableScope.launch {
                             val result = client.routines.execute(
-                                "PT.05.0002.00.00.0.00.00.001",
+                                "GW.05.0002.00.00.0.00.00.001",
                                 companyName,
                                 authority,
                                 tln,
