@@ -5,7 +5,7 @@ variables:
 default:
   tags:
     - docker-runner-01
-  image: gitlab.tenderhub.net/devops/docker/openjdk:21
+  image: registry.tenderhub.net/devops/docker/openjdk:21
   before_script:
     - export GRADLE_USER_HOME=`pwd`/.gradle
 
