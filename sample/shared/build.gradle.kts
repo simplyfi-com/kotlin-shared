@@ -5,7 +5,6 @@ plugins {
     alias(libs.plugins.multiplatform.resources)
 }
 
-
 kotlin {
     androidTarget {
         compilations.all {

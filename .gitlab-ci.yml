@@ -1,0 +1,23 @@
+variables:
+  GITLAB_NPM_URI: https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm
+  GITLAB_NPM_TOKEN: $CI_JOB_TOKEN
+
+default:
+  tags:
+    - docker-runner-01
+  image: gitlab.tenderhub.net/devops/docker/openjdk:21
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+
+stages:
+  - publish
+
+cache:
+  paths:
+    - .gradle/wrapper
+    - .gradle/caches
+
+publish:npm:
+  stage: publish
+  script:
+    - ./gradlew publishBrowserPackageToGitlabRegistry

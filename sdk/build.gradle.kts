@@ -3,11 +3,12 @@ plugins {
     alias(libs.plugins.kotlin.plugins.serialization)
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.compose)
-    alias(libs.plugins.kotlin.native.cocoapods)
+    id("maven-publish")
+    alias(libs.plugins.npm.publish)
 }
 
 group = "com.simplyfi"
-version = "1.0-SNAPSHOT"
+version = "0.0.1"
 
 repositories {
     mavenCentral()
@@ -20,10 +21,15 @@ kotlin {
     }
 
     js("browser") {
+        moduleName = "browser"
         browser()
+        binaries.library()
+        generateTypeScriptDefinitions()
     }
 
     androidTarget {
+        publishAllLibraryVariants()
+
         compilations.all {
             kotlinOptions {
                 (findProperty("android.jvmTarget") as String?)?.let { jvmTarget = it }
@@ -31,16 +37,12 @@ kotlin {
         }
     }
 
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
-
-    cocoapods {
-        homepage = "https://gitlab.tenderhub.net/tenderhub/kotlin-shared"
-        summary = "SimplyFi SDK"
-        version = "1.0"
-        ios.deploymentTarget = "16.4"
-        framework {
+    listOf(
+        iosX64(),
+        iosArm64(),
+        iosSimulatorArm64(),
+    ).forEach {
+        it.binaries.framework {
             baseName = "sdk"
             isStatic = true
         }
@@ -51,19 +53,22 @@ kotlin {
     sourceSets {
         val uiMain by creating {
             dependencies {
-                implementation(compose.runtime)
-                implementation(compose.foundation)
+                api(compose.runtime)
+                api(compose.foundation)
             }
         }
         val mobileMain by creating {
-            dependencies {
-                implementation(compose.material3)
-                implementation(libs.compose.webview)
-            }
             dependsOn(uiMain)
+            dependencies {
+                api(compose.material3)
+                api(libs.compose.webview)
+            }
         }
         androidMain {
             dependsOn(mobileMain)
+            dependencies {
+                implementation(libs.ktor.client.okhttp)
+            }
         }
         commonMain {
             dependencies {
@@ -79,6 +84,7 @@ kotlin {
         jvmMain {
             dependencies {
                 implementation(libs.ktor.client.okhttp)
+                implementation(compose.runtime)
             }
         }
         val browserMain by getting {
@@ -125,5 +131,23 @@ android {
 
     kotlin {
         (findProperty("android.jdkVersion") as String?)?.toInt()?.let { jvmToolchain(it) }
+    }
+}
+
+npmPublish {
+    organization.set((group as String).split(".")[1])
+    version.set(project.version as String)
+
+    packages {
+        getByName("browser") {
+            packageName.set("browser")
+        }
+    }
+
+    registries {
+        register("gitlab") {
+            uri.set(providers.environmentVariable("GITLAB_NPM_URI"))
+            authToken.set(providers.environmentVariable("GITLAB_NPM_TOKEN"))
+        }
     }
 }
