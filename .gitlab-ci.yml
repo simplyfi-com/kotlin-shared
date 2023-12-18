@@ -20,11 +20,17 @@ cache:
     - .gradle/wrapper
     - .gradle/caches
 
-publish:browser:
+publish:npm:
   allow_failure: true
   stage: publish
   script:
     - ./gradlew publishBrowserPackageToGitlabRegistry
+
+publish:browser:
+  allow_failure: true
+  stage: publish
+  script:
+    - ./gradlew publishBrowserPublicationToGitlabRepository
 
 publish:android:debug:
   stage: publish
