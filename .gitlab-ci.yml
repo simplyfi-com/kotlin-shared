@@ -2,8 +2,8 @@ variables:
   GITLAB_NPM_URI: https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm
   GITLAB_NPM_TOKEN: $CI_JOB_TOKEN
   GITLAB_MAVEN_URI: https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/maven
-  GITLAB_MAVEN_USERNAME: gitlab-ci-token
-  GITLAB_MAVEN_PASSWORD: $CI_JOB_TOKEN
+  GITLAB_MAVEN_HEADER: Job-Token
+  GITLAB_MAVEN_TOKEN: $CI_JOB_TOKEN
 
 default:
   tags:

@@ -1,12 +1,11 @@
-import java.net.URI
-
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.kotlin.plugins.serialization)
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.compose)
-    id("maven-publish")
+    `maven-publish`
     alias(libs.plugins.npm.publish)
+    alias(libs.plugins.multiplatform.swiftpackage)
 }
 
 group = "com.simplyfi"
@@ -155,12 +154,24 @@ npmPublish {
 publishing {
     repositories {
         maven {
-            url = URI(providers.environmentVariable("GITLAB_MAVEN_URI").get())
+            url = uri(providers.environmentVariable("GITLAB_MAVEN_URI").get())
             name = "gitlab"
-            credentials {
-                username = providers.environmentVariable("GITLAB_MAVEN_USERNAME").get()
-                password = providers.environmentVariable("GITLAB_MAVEN_PASSWORD").get()
+            credentials(HttpHeaderCredentials::class) {
+                name = providers.environmentVariable("GITLAB_MAVEN_HEADER").get()
+                value = providers.environmentVariable("GITLAB_MAVEN_TOKEN").get()
+            }
+            authentication {
+                create("header", HttpHeaderAuthentication::class)
             }
         }
     }
+}
+
+multiplatformSwiftPackage {
+    packageName("sdk-ios")
+    swiftToolsVersion("5.8")
+    targetPlatforms {
+        iOS { v("16") }
+    }
+    outputDirectory(File(projectDir, "build/swiftpackage"))
 }

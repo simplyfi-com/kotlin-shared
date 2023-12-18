@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.android.application).apply(false)
     alias(libs.plugins.jetbrains.compose).apply(false)
     alias(libs.plugins.multiplatform.resources).apply(false)
+    alias(libs.plugins.multiplatform.swiftpackage).apply(false)
     alias(libs.plugins.npm.publish).apply(false)
 }
 

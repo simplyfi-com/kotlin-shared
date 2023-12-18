@@ -21,7 +21,7 @@ fun App(viewStrategy: ViewStrategy = ViewStrategy.EMBED, routeChange: Route.() -
     var route by rememberSaveable { mutableStateOf(Route.Register) }
     val apiUrl = stringResource(MR.strings.API_URL)
     val apiKey = stringResource(MR.strings.API_KEY)
-    val goUrl = stringResource(MR.strings.GO_URL)
+    val webUrl = stringResource(MR.strings.WEB_URL)
 
     LaunchedEffect(route) {
         routeChange(route)
@@ -41,7 +41,7 @@ fun App(viewStrategy: ViewStrategy = ViewStrategy.EMBED, routeChange: Route.() -
                 }
 
                 Route.Onboarding -> View(
-                    Config(goUrl, token, strategy = viewStrategy)
+                    Config(webUrl, token, strategy = viewStrategy)
                 )
             }
         }

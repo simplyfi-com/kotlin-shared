@@ -37,7 +37,7 @@ kotlin {
                 implementation(libs.kotlinx.datetime)
                 api(libs.resources)
                 api(libs.resources.compose)
-                api(project(":sdk"))
+                api(libs.sdk)
             }
         }
         val mobileMain by creating {
