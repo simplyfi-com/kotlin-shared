@@ -140,7 +140,7 @@ npmPublish {
 
     packages {
         getByName("browser") {
-            packageName.set("browser")
+            packageName.set("sdk-browser")
         }
     }
 
