@@ -28,11 +28,13 @@ publish:browser:
 
 publish:android:debug:
   stage: publish
+  image: registry.tenderhub.net/devops/docker/android-sdk:latest
   script:
     - ./gradlew publishAndroidDebugPublicationToGitlabRepository
 
 publish:android:release:
   stage: publish
+  image: registry.tenderhub.net/devops/docker/android-sdk:latest
   script:
     - ./gradlew publishAndroidReleasePublicationToGitlabRepository
 
