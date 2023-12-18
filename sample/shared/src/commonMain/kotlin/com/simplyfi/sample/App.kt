@@ -13,10 +13,10 @@ import com.simplyfi.sdk.view.View
 import com.simplyfi.sdk.view.ViewStrategy
 import dev.icerock.moko.resources.compose.stringResource
 
-fun noop(route: Route) {}
+val NoOpRouteChange: Route.() -> Unit = {}
 
 @Composable
-fun App(viewStrategy: ViewStrategy = ViewStrategy.EMBED, routeChange: (route: Route) -> Unit = { noop(it) }) {
+fun App(viewStrategy: ViewStrategy = ViewStrategy.EMBED, routeChange: Route.() -> Unit = NoOpRouteChange) {
     var token by rememberSaveable { mutableStateOf("") }
     var route by rememberSaveable { mutableStateOf(Route.Register) }
     val apiUrl = stringResource(MR.strings.API_URL)

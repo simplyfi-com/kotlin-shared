@@ -3,13 +3,11 @@ package com.simplyfi.sdk.view
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.interop.UIKitView
-import com.multiplatform.webview.web.IOSWebView
-import com.multiplatform.webview.web.WebContent
-import com.multiplatform.webview.web.rememberWebViewState
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.readValue
 import platform.CoreGraphics.CGRectZero
-import platform.Foundation.setValue
+import platform.Foundation.NSMutableURLRequest
+import platform.Foundation.NSURL
 import platform.WebKit.WKUserScript
 import platform.WebKit.WKUserScriptInjectionTime
 import platform.WebKit.WKWebView
@@ -24,8 +22,6 @@ actual fun View(
     onCreated: () -> Unit,
     onDispose: () -> Unit,
 ) {
-    val state = rememberWebViewState(config.url)
-
     UIKitView(
         factory = {
             val userScript = WKUserScript(
@@ -37,12 +33,10 @@ actual fun View(
             val wkWebViewConfiguration =
                 WKWebViewConfiguration().apply {
                     allowsInlineMediaPlayback = true
-                    defaultWebpagePreferences.allowsContentJavaScript = state.webSettings.isJavaScriptEnabled
+                    defaultWebpagePreferences.allowsContentJavaScript = true
                     preferences.apply {
-                        setValue(state.webSettings.allowFileAccessFromFileURLs, forKey = "allowFileAccessFromFileURLs")
-                        javaScriptEnabled = state.webSettings.isJavaScriptEnabled
+                        javaScriptEnabled = true
                     }
-                    setValue(state.webSettings.allowUniversalAccessFromFileURLs, forKey = "allowUniversalAccessFromFileURLs")
                     userContentController.addUserScript(userScript)
                 }
             WKWebView(
@@ -51,9 +45,12 @@ actual fun View(
             ).apply {
                 userInteractionEnabled = true
                 allowsBackForwardNavigationGestures = true
-                customUserAgent = state.webSettings.customUserAgentString
             }.also {
-                IOSWebView(it).loadUrl((state.content as WebContent.Url).url, (state.content as WebContent.Url).additionalHttpHeaders)
+                val request =
+                    NSMutableURLRequest.requestWithURL(
+                        URL = NSURL(string = config.url),
+                    )
+                it.loadRequest(request)
                 onCreated()
             }
         },

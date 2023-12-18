@@ -8,7 +8,6 @@ coroutines = "1.7.3"
 serialization = "1.6.0"
 datetime = "0.4.1"
 android = "8.1.4"
-webview = "1.7.4"
 compose = "1.5.11"
 resources = "0.23.0"
 ksoup = "0.3.0"
@@ -38,7 +37,6 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "datetime" }
 kotlinx-datetime-jvm = { module = "org.jetbrains.kotlinx:kotlinx-datetime-jvm", version.ref = "datetime" }
-compose-webview = { module = "io.github.kevinnzou:compose-webview-multiplatform", version.ref = "webview" }
 resources-generator = { module = "dev.icerock.moko:resources-generator", version.ref = "resources" }
 resources = { module = "dev.icerock.moko:resources", version.ref = "resources" }
 resources-compose = { module = "dev.icerock.moko:resources-compose", version.ref = "resources" }

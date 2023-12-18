@@ -1,3 +1,5 @@
+import java.net.URI
+
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.kotlin.plugins.serialization)
@@ -61,7 +63,6 @@ kotlin {
             dependsOn(uiMain)
             dependencies {
                 api(compose.material3)
-                api(libs.compose.webview)
             }
         }
         androidMain {
@@ -107,7 +108,6 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material3)
-                implementation(libs.compose.webview)
                 implementation(libs.ktor.client.darwin)
             }
         }
@@ -148,6 +148,19 @@ npmPublish {
         register("gitlab") {
             uri.set(providers.environmentVariable("GITLAB_NPM_URI"))
             authToken.set(providers.environmentVariable("GITLAB_NPM_TOKEN"))
+        }
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            url = URI(providers.environmentVariable("GITLAB_MAVEN_URI").get())
+            name = "gitlab"
+            credentials {
+                username = providers.environmentVariable("GITLAB_MAVEN_USERNAME").get()
+                password = providers.environmentVariable("GITLAB_MAVEN_PASSWORD").get()
+            }
         }
     }
 }

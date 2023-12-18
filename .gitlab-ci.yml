@@ -1,6 +1,9 @@
 variables:
   GITLAB_NPM_URI: https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm
   GITLAB_NPM_TOKEN: $CI_JOB_TOKEN
+  GITLAB_MAVEN_URI: https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/maven
+  GITLAB_MAVEN_USERNAME: gitlab-ci-token
+  GITLAB_MAVEN_PASSWORD: $CI_JOB_TOKEN
 
 default:
   tags:
@@ -17,7 +20,23 @@ cache:
     - .gradle/wrapper
     - .gradle/caches
 
-publish:npm:
+publish:browser:
+  allow_failure: true
   stage: publish
   script:
     - ./gradlew publishBrowserPackageToGitlabRegistry
+
+publish:android:debug:
+  stage: publish
+  script:
+    - ./gradlew publishAndroidDebugPublicationToGitlabRepository
+
+publish:android:release:
+  stage: publish
+  script:
+    - ./gradlew publishAndroidReleasePublicationToGitlabRepository
+
+publish:jvm:
+  stage: publish
+  script:
+    - ./gradlew publishJvmPublicationToGitlabRepository
