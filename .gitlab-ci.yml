@@ -42,3 +42,8 @@ publish:jvm:
   stage: publish
   script:
     - ./gradlew publishJvmPublicationToGitlabRepository
+
+publish:multiplatform:
+  stage: publish
+  script:
+    - ./gradlew publishKotlinMultiplatformPublicationToGitlabRepository
