@@ -54,6 +54,12 @@ repositories {
 ```kotlin
 kotlin {
     sourceSets {
+        // for Kotlin Multiplatform add only this
+        val commonMain by getting {
+            dependencies {
+                implementation("com.simplyfi:sdk:0.0.1")
+            }
+        }
         // for Android
         val androidMain by getting {
             dependencies {
@@ -64,12 +70,6 @@ kotlin {
         val jvmMain by getting {
             dependencies {
                 implemenetation("com.simplyfi:sdk-jvm:0.0.1")
-            }
-        }
-        // for Kotlin Multiplatform
-        val commonMain by getting {
-            dependencies {
-                implementation("com.simplyfi:sdk:0.0.1")
             }
         }
     }
