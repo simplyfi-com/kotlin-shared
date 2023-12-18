@@ -80,6 +80,8 @@ kotlin {
 
 ### SPM
 
+1. Add packages from `git@gitlab.tenderhub.net:sdk/swift-shared.git`
+
 ## Demo
 
 1. To build and launch sample apps add and fill `sample/shared/src/commonMain/resources/MR/base/strings.xml` file:

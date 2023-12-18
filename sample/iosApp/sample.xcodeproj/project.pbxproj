@@ -11,6 +11,7 @@
 		C32DCDF62B21180F00E8CA7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DCDF52B21180F00E8CA7E /* ContentView.swift */; };
 		C32DCDF82B21181500E8CA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C32DCDF72B21181500E8CA7E /* Assets.xcassets */; };
 		C32DCDFB2B21181500E8CA7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C32DCDFA2B21181500E8CA7E /* Preview Assets.xcassets */; };
+		C33A9E3D2B310D6400C5797C /* sdk-ios in Frameworks */ = {isa = PBXBuildFile; productRef = C33A9E3C2B310D6400C5797C /* sdk-ios */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C33A9E3D2B310D6400C5797C /* sdk-ios in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +89,9 @@
 			dependencies = (
 			);
 			name = sample;
+			packageProductDependencies = (
+				C33A9E3C2B310D6400C5797C /* sdk-ios */,
+			);
 			productName = sample;
 			productReference = C32DCDF02B21180F00E8CA7E /* sample.app */;
 			productType = "com.apple.product-type.application";
@@ -115,6 +120,9 @@
 				Base,
 			);
 			mainGroup = C32DCDE72B21180F00E8CA7E;
+			packageReferences = (
+				C33A9E3B2B310D6400C5797C /* XCRemoteSwiftPackageReference "swift-shared" */,
+			);
 			productRefGroup = C32DCDF12B21180F00E8CA7E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -394,6 +402,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C33A9E3B2B310D6400C5797C /* XCRemoteSwiftPackageReference "swift-shared" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@gitlab.tenderhub.net:sdk/swift-shared.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C33A9E3C2B310D6400C5797C /* sdk-ios */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C33A9E3B2B310D6400C5797C /* XCRemoteSwiftPackageReference "swift-shared" */;
+			productName = "sdk-ios";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C32DCDE82B21180F00E8CA7E /* Project object */;
 }
