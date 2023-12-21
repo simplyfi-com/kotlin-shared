@@ -9,8 +9,8 @@
 1. Add `.npmrc` to repository root:
 
 ```text
-@simplyfi:registry=https://gitlab.tenderhub.net/api/v4/projects/312/packages/npm/
-//gitlab.tenderhub.net/api/v4/projects/312/packages/npm/:_authToken="${GITLAB_TOKEN}"
+@simplyfi:registry=https://gitlab.tenderhub.net/api/v4/projects/309/packages/npm/
+//gitlab.tenderhub.net/api/v4/projects/309/packages/npm/:_authToken="${GITLAB_TOKEN}"
 ```
 
 2. Add dependency to `package.json`:
@@ -36,7 +36,7 @@ npm install
 ```kotlin
 repositories {
     maven {
-        url = uri("https://gitlab.tenderhub.net/api/v4/projects/312/packages/maven")
+        url = uri("https://gitlab.tenderhub.net/api/v4/projects/309/packages/maven")
         name = "gitlab"
         credentials(HttpHeaderCredentials::class) {
             name = "Private-Token"
