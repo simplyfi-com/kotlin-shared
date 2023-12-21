@@ -40,3 +40,20 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Kotlin ###
+local.properties
+**/*/res*/MR/**/values/*.xml
+**/*/res*/**/values/secrets.xml
+*.hprof
+
+### iOS ###
+sample/iosApp/Podfile.lock
+sample/iosApp/Pods/*
+sample/iosApp/sample.xcworkspace/*
+sample/iosApp/sample.xcodeproj/*
+!sample/iosApp/sample.xcodeproj/project.pbxproj
+**/*.podspec
+sample/shared/src/commonMain/resources/MR/base/strings.xml
+**/*.config.d/moko-resources-generated.js
+**/resources/config.json

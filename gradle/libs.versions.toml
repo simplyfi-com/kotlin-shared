@@ -1,0 +1,46 @@
+[versions]
+activity-compose = "1.8.1"
+core-ktx = "1.12.0"
+appcompat = "1.6.1"
+kotlin = "1.9.21"
+ktor = "2.3.6"
+coroutines = "1.7.3"
+serialization = "1.6.0"
+datetime = "0.4.1"
+android = "8.1.4"
+compose = "1.5.11"
+resources = "0.23.0"
+ksoup = "0.3.0"
+npm-publish = "3.4.1"
+swiftpackage = "2.0.3"
+sdk = "0.0.1"
+
+[plugins]
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-plugins-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "android" }
+android-application = { id = "com.android.application", version.ref = "android" }
+jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+multiplatform-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "resources" }
+npm-publish = { id = "dev.petuska.npm.publish", version.ref = "npm-publish" }
+multiplatform-swiftpackage = { id = "com.chromaticnoise.multiplatform-swiftpackage", version.ref = "swiftpackage" }
+
+[libraries]
+activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "datetime" }
+kotlinx-datetime-jvm = { module = "org.jetbrains.kotlinx:kotlinx-datetime-jvm", version.ref = "datetime" }
+resources-generator = { module = "dev.icerock.moko:resources-generator", version.ref = "resources" }
+resources = { module = "dev.icerock.moko:resources", version.ref = "resources" }
+resources-compose = { module = "dev.icerock.moko:resources-compose", version.ref = "resources" }
+ksoup = { module = "com.mohamedrejeb.ksoup:ksoup-html", version.ref = "ksoup" }
+sdk = { module = "com.simplyfi:sdk", version.ref = "sdk" }
