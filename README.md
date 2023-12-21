@@ -84,7 +84,7 @@ kotlin {
 
 ## Demo
 
-1. To build and launch sample apps add and fill `sample/shared/src/commonMain/resources/MR/base/strings.xml` file:
+1. To build and launch sample apps add `sample/shared/src/commonMain/resources/MR/base/strings.xml` file:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
