@@ -1,8 +1,8 @@
 package com.simplyfi.sdk.clients
 
-import com.simplyfi.sdk.Config
+import com.simplyfi.sdk.ClientConfig
 import io.ktor.client.*
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.js.*
 
-actual fun httpClient(config: Config, clientConfig: HttpClientConfig<*>.()-> Unit): HttpClient = HttpClient(Js, clientConfig)
+internal actual fun httpClient(config: ClientConfig, clientConfig: HttpClientConfig<*>.()-> Unit): HttpClient = HttpClient(Js, clientConfig)

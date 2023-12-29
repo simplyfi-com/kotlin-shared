@@ -8,7 +8,7 @@ import org.jetbrains.compose.web.renderComposable
 fun main() {
     renderComposable("root") {
         App(ViewStrategy.IFRAME) {
-            when (it) {
+            when (this) {
                 Route.Register -> {
                     window.history.pushState(null, "Register", "/register")
                 }

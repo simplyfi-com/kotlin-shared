@@ -3,6 +3,7 @@ package com.simplyfi.sdk.view
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.interop.UIKitView
+import androidx.compose.ui.window.ComposeUIViewController
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.readValue
 import platform.CoreGraphics.CGRectZero
@@ -14,10 +15,17 @@ import platform.WebKit.WKWebView
 import platform.WebKit.WKWebViewConfiguration
 import platform.WebKit.javaScriptEnabled
 
+fun WebViewController(
+    config: ViewConfig,
+    modifier: Modifier = Modifier,
+    onCreated: () -> Unit = {},
+    onDispose: () -> Unit = {},
+) = ComposeUIViewController { WebView(config, modifier, onCreated, onDispose) }
+
 @OptIn(ExperimentalForeignApi::class)
 @Composable
-actual fun View(
-    config: Config,
+actual fun WebView(
+    config: ViewConfig,
     modifier: Modifier,
     onCreated: () -> Unit,
     onDispose: () -> Unit,

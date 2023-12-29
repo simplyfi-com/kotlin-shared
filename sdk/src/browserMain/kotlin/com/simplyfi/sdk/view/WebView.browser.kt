@@ -18,8 +18,8 @@ import org.w3c.dom.Window
 internal external val window: dynamic
 
 @Composable
-actual fun View(
-    config: Config,
+actual fun WebView(
+    config: ViewConfig,
     modifier: Modifier,
     onCreated: () -> Unit,
     onDispose: () -> Unit

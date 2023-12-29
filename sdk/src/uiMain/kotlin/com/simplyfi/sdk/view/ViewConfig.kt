@@ -4,7 +4,7 @@ enum class ViewStrategy {
     EMBED, IFRAME,
 }
 
-data class Config(
+data class ViewConfig(
     val url: String,
     val token: String,
     val strategy: ViewStrategy = ViewStrategy.EMBED,

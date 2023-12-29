@@ -1,6 +1,6 @@
 package com.simplyfi.sdk.clients
 
-import com.simplyfi.sdk.Config
+import com.simplyfi.sdk.ClientConfig
 import com.simplyfi.sdk.models.core.ApiException
 import io.ktor.client.*
 import io.ktor.client.HttpClient
@@ -15,9 +15,9 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonNamingStrategy
 
-expect fun httpClient(config: Config, clientConfig: HttpClientConfig<*>.()-> Unit={}): HttpClient
+internal expect fun httpClient(config: ClientConfig, clientConfig: HttpClientConfig<*>.()-> Unit={}): HttpClient
 
-internal class HttpClient(config: Config, path: String) {
+internal class HttpClient(config: ClientConfig, path: String) {
     @OptIn(ExperimentalSerializationApi::class)
     val client = httpClient(config) {
         install(HttpTimeout) {

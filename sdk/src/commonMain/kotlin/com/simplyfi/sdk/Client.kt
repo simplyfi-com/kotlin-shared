@@ -2,6 +2,6 @@ package com.simplyfi.sdk
 
 import com.simplyfi.sdk.clients.RoutinesClient
 
-class Client(private val config: Config) {
+class Client(config: ClientConfig) {
     val routines = RoutinesClient(config)
 }

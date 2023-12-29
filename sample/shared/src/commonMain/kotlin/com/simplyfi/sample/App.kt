@@ -8,8 +8,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import com.simplyfi.sample.models.Route
 import com.simplyfi.sample.ui.*
-import com.simplyfi.sdk.view.Config
-import com.simplyfi.sdk.view.View
+import com.simplyfi.sdk.view.ViewConfig
+import com.simplyfi.sdk.view.WebView
 import com.simplyfi.sdk.view.ViewStrategy
 import dev.icerock.moko.resources.compose.stringResource
 
@@ -31,7 +31,7 @@ fun App(viewStrategy: ViewStrategy = ViewStrategy.EMBED, routeChange: Route.() -
         Navigation(route) {
             when (it) {
                 Route.Register -> Registration(
-                    com.simplyfi.sdk.Config(
+                    com.simplyfi.sdk.ClientConfig(
                         apiUrl,
                         apiKey
                     )
@@ -40,8 +40,8 @@ fun App(viewStrategy: ViewStrategy = ViewStrategy.EMBED, routeChange: Route.() -
                     route = r
                 }
 
-                Route.Onboarding -> View(
-                    Config(webUrl, token, strategy = viewStrategy)
+                Route.Onboarding -> WebView(
+                    ViewConfig(webUrl, token, strategy = viewStrategy)
                 )
             }
         }

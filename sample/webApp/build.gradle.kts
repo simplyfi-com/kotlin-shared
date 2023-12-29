@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.jetbrains.compose)
 }
+
 kotlin {
     js(IR) {
         binaries.executable()

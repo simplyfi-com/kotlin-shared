@@ -7,12 +7,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import com.simplyfi.sample.models.Route
-import com.simplyfi.sample.ui.digits
-import com.simplyfi.sample.ui.letters
-import com.simplyfi.sample.ui.randomString
-import com.simplyfi.sample.ui.symbols
 import com.simplyfi.sdk.Client
-import com.simplyfi.sdk.Config
+import com.simplyfi.sdk.ClientConfig
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
 import org.jetbrains.compose.web.attributes.ButtonType
@@ -33,7 +29,7 @@ import kotlin.time.toDuration
 
 @Composable
 actual fun Registration(
-    config: Config,
+    config: ClientConfig,
     callback: (String, Route) -> Unit
 ) {
     val client = Client(config)

@@ -1,11 +1,11 @@
 package com.simplyfi.sdk.clients
 
-import com.simplyfi.sdk.Config
+import com.simplyfi.sdk.ClientConfig
 import com.simplyfi.sdk.models.core.RunnableResult
 import com.simplyfi.sdk.models.core.routines.Routine
 import com.simplyfi.sdk.models.core.routines.RoutineExecute
 
-class RoutinesClient(config: Config) {
+class RoutinesClient(config: ClientConfig) {
     private val httpClient = HttpClient(config, "v1/routines/")
 
     suspend fun get(name: String, token: String? = null): Routine {

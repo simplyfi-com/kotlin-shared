@@ -25,14 +25,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.simplyfi.sample.models.Route
 import com.simplyfi.sdk.Client
-import com.simplyfi.sdk.Config
+import com.simplyfi.sdk.ClientConfig
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
 import kotlin.time.DurationUnit
 import kotlin.time.toDuration
 
 @Composable
-actual fun Registration(config: Config, callback: (String, Route) -> Unit) {
+actual fun Registration(config: ClientConfig, callback: (String, Route) -> Unit) {
     val client = Client(config)
     var companyName by rememberSaveable { mutableStateOf("") }
     var firstName by rememberSaveable { mutableStateOf("") }

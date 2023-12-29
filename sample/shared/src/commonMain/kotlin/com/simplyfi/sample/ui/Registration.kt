@@ -2,11 +2,11 @@ package com.simplyfi.sample.ui
 
 import androidx.compose.runtime.Composable
 import com.simplyfi.sample.models.Route
-import com.simplyfi.sdk.Config
+import com.simplyfi.sdk.ClientConfig
 import kotlin.random.Random
 
 @Composable
-expect fun Registration(config: Config, callback: (String, Route) -> Unit)
+expect fun Registration(config: ClientConfig, callback: (String, Route) -> Unit)
 
 val letters = "abcdefghijklmnopqrstuvwxyz".split("")
 val digits = "0123456789".split("")
