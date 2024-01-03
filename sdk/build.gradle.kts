@@ -11,6 +11,7 @@ plugins {
     alias(libs.plugins.npm.publish)
     alias(libs.plugins.multiplatform.swiftpackage)
     alias(libs.plugins.dokka)
+    alias(libs.plugins.git.publish)
 }
 
 group = "com.simplyfi"
@@ -200,4 +201,21 @@ tasks.withType<DokkaTask>().configureEach {
         footerMessage = "Copyright © 2023 SFI Technologies Limited"
         customStyleSheets = listOf(file("assets/logo-styles.css"))
     }
+}
+
+gitPublish {
+    repoUri.set("git@github.com:simplyfi-com/swift-shared.git")
+
+    branch.set("main")
+
+    contents {
+        from(
+            rootProject.file("LICENSE"),
+            rootProject.file("VERSION"),
+            layout.projectDirectory.dir(".swift-sdk-base"),
+            layout.buildDirectory.dir("swiftpackage")
+        )
+    }
+
+    commitMessage.set("Update to $version")
 }

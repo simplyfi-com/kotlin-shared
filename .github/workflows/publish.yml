@@ -26,30 +26,16 @@ jobs:
         uses: android-actions/setup-android@v3
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@v1
+      - uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_DEPLOY_KEY }}
       - name: Publish package
         uses: gradle/gradle-build-action@v2
         with:
           gradle-version: 8.1
-          arguments: publish createSwiftPackage
+          arguments: publish createSwiftPackage gitPublishPush
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create files
-        run: |
-          cp LICENSE sdk/build/swiftpackage
-          cp VERSION sdk/build/swiftpackage
-          cp sdk/assets/swift-readme.md sdk/build/swiftpackage/README.md
-          echo "sdk-ios-*.zip" > sdk/build/swiftpackage/.gitignore
-          echo "$GITHUB_REF_NAME" > sdk/build/swiftpackage/VERSION
-          mkdir -p sdk/build/swiftpackage/.github/workflows
-          cp sdk/assets/workflow.yml sdk/build/swiftpackage/.github/workflows/release.yml
-      - name: Push swift package
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
-        with:
-          source-directory: sdk/build/swiftpackage
-          destination-github-username: simplyfi-com
-          destination-repository-name: swift-shared
       - name: Read VERSION file
         id: getversion
         run: echo "::set-output name=version::$(cat VERSION)"
