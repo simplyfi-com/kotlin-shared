@@ -7,10 +7,7 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-latest
     permissions:
       contents: read
       packages: write
@@ -21,7 +18,7 @@ jobs:
           node-version: 21
       - uses: actions/setup-java@v4
         with:
-          java-version: 21
+          java-version: 17
           distribution: temurin
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
