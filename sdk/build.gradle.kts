@@ -14,7 +14,7 @@ plugins {
 }
 
 group = "com.simplyfi"
-version = "0.0.1"
+version = rootProject.file("VERSION").readText()
 
 repositories {
     mavenCentral()
