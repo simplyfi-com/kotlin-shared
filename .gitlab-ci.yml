@@ -1,4 +1,0 @@
-include:
-  - project: 'build/pipeline'
-    ref: main
-    file: '/kotlin-shared.yml'

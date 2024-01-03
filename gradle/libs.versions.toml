@@ -2,6 +2,7 @@
 activity-compose = "1.8.1"
 core-ktx = "1.12.0"
 appcompat = "1.6.1"
+dokka-base = "1.9.10"
 kotlin = "1.9.21"
 ktor = "2.3.6"
 coroutines = "1.7.3"
@@ -31,6 +32,7 @@ dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+dokka-base = { module = "org.jetbrains.dokka:dokka-base", version.ref = "dokka-base" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }

@@ -1,0 +1,3 @@
+.library-name--link::before {
+    background-image: url('https://static.simplyfi.com/static/assets/logo-dark-short.svg') !important;
+}

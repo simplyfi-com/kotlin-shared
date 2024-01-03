@@ -1,3 +1,7 @@
+import org.jetbrains.dokka.base.DokkaBase
+import org.jetbrains.dokka.gradle.DokkaTask
+import org.jetbrains.dokka.base.DokkaBaseConfiguration
+
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.kotlin.plugins.serialization)
@@ -10,7 +14,7 @@ plugins {
 }
 
 group = "com.simplyfi"
-version = "0.0.2"
+version = "0.0.1"
 
 repositories {
     mavenCentral()
@@ -135,7 +139,7 @@ android {
 }
 
 npmPublish {
-    organization.set((group as String).split(".")[1])
+    organization.set((group as String).split(".").reversed().joinToString("-"))
     version.set(project.version as String)
 
     packages {
@@ -145,9 +149,8 @@ npmPublish {
     }
 
     registries {
-        register("gitlab") {
-            uri.set(providers.environmentVariable("GITLAB_NPM_URI"))
-            authToken.set(providers.environmentVariable("GITLAB_NPM_TOKEN"))
+        github {
+            authToken.set(providers.environmentVariable("GITHUB_TOKEN"))
         }
     }
 }
@@ -155,14 +158,11 @@ npmPublish {
 publishing {
     repositories {
         maven {
-            url = uri(providers.environmentVariable("GITLAB_MAVEN_URI").get())
-            name = "gitlab"
-            credentials(HttpHeaderCredentials::class) {
-                name = providers.environmentVariable("GITLAB_MAVEN_HEADER").get()
-                value = providers.environmentVariable("GITLAB_MAVEN_TOKEN").get()
-            }
-            authentication {
-                create("header", HttpHeaderAuthentication::class)
+            url = uri("https://maven.pkg.github.com/simplyfi-com/kotlin-shared")
+            name = "github"
+            credentials {
+                username = providers.environmentVariable("GITHUB_ACTOR").get()
+                password = providers.environmentVariable("GITHUB_TOKEN").get()
             }
         }
     }
@@ -175,4 +175,29 @@ multiplatformSwiftPackage {
         iOS { v("16") }
     }
     outputDirectory(File(projectDir, "build/swiftpackage"))
+}
+
+buildscript {
+    dependencies {
+        classpath(libs.dokka.base)
+    }
+}
+
+tasks.withType<DokkaTask>().configureEach {
+    moduleName.set("SimplyFi SDK")
+
+    dokkaSourceSets {
+        configureEach {
+            sourceLink {
+                localDirectory.set(projectDir.resolve("src"))
+                remoteUrl.set(uri("https://github.com/simplyfi-com/kotlin-shared/-/tree/master/sdk/src").toURL())
+                remoteLineSuffix.set("#L")
+            }
+        }
+    }
+
+    pluginConfiguration<DokkaBase, DokkaBaseConfiguration> {
+        footerMessage = "Copyright © 2023 SFI Technologies Limited"
+        customStyleSheets = listOf(file("assets/logo-styles.css"))
+    }
 }

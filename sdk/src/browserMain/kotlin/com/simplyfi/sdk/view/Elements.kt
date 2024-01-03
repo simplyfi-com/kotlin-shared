@@ -13,12 +13,12 @@ import org.w3c.dom.events.Event
 import org.w3c.dom.events.EventTarget
 
 @Composable
-fun Root(
+internal fun Root(
     tagName: String = "th-root",
 ) = TagElement<HTMLElement>(tagName, null, null)
 
 @Composable
-fun Script(
+internal fun Script(
     attrs: AttrsScope<HTMLScriptElement>.() -> Unit = {}
 ) = TagElement(
     "script",
@@ -27,7 +27,7 @@ fun Script(
 )
 
 @Composable
-fun Base(
+internal fun Base(
     attrs: AttrsScope<HTMLBaseElement>.() -> Unit = {}
 ) = TagElement(
     "base",
@@ -36,7 +36,7 @@ fun Base(
 )
 
 @Composable
-fun Link(
+internal fun Link(
     attrs: AttrsScope<HTMLLinkElement>.() -> Unit = {}
 ) = TagElement(
     "link",
@@ -45,7 +45,7 @@ fun Link(
 )
 
 @Composable
-fun IFrame(
+internal fun IFrame(
     attrs: AttrsScope<HTMLIFrameElement>.() -> Unit
 ) = TagElement(
     "iframe",
@@ -53,20 +53,20 @@ fun IFrame(
     null
 )
 
-fun AttrsScope<HTMLScriptElement>.src(value: String) =
+internal fun AttrsScope<HTMLScriptElement>.src(value: String) =
     attr("src", value)
 
-fun AttrsScope<HTMLScriptElement>.defer() =
+internal fun AttrsScope<HTMLScriptElement>.defer() =
     attr("defer", "")
 
-fun AttrsScope<HTMLLinkElement>.href(value: String) =
+internal fun AttrsScope<HTMLLinkElement>.href(value: String) =
     attr("href", value)
 
-fun AttrsScope<HTMLLinkElement>.rel(value: String) =
+internal fun AttrsScope<HTMLLinkElement>.rel(value: String) =
     attr("rel", value)
 
-fun AttrsScope<HTMLBaseElement>.href(value: String) =
+internal fun AttrsScope<HTMLBaseElement>.href(value: String) =
     attr("href", value)
 
-fun AttrsScope<HTMLIFrameElement>.src(value: String) =
+internal fun AttrsScope<HTMLIFrameElement>.src(value: String) =
     attr("src", value)

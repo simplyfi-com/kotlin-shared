@@ -1,4 +1,4 @@
-include(":sdk")
+    include(":sdk")
 include(":sample:shared")
 include(":sample:androidApp")
 include(":sample:webApp")
@@ -22,15 +22,8 @@ dependencyResolutionManagement {
         google()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
         maven {
-            url = uri(providers.environmentVariable("GITLAB_MAVEN_URI").get())
-            name = "gitlab"
-            credentials(HttpHeaderCredentials::class) {
-                name = providers.environmentVariable("GITLAB_MAVEN_HEADER").get()
-                value = providers.environmentVariable("GITLAB_MAVEN_TOKEN").get()
-            }
-            authentication {
-                create("header", HttpHeaderAuthentication::class)
-            }
+            url = uri("https://maven.pkg.github.com/simplyfi-com/kotlin-shared")
+            name = "github"
         }
     }
 }
