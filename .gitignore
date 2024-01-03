@@ -57,3 +57,4 @@ sample/iosApp/sample.xcodeproj/*
 sample/shared/src/commonMain/resources/MR/base/strings.xml
 **/*.config.d/moko-resources-generated.js
 **/resources/config.json
+.idea/artifacts

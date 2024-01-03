@@ -204,18 +204,36 @@ tasks.withType<DokkaTask>().configureEach {
 }
 
 gitPublish {
-    repoUri.set("git@github.com:simplyfi-com/swift-shared.git")
-
-    branch.set("main")
-
-    contents {
-        from(
-            rootProject.file("LICENSE"),
-            rootProject.file("VERSION"),
-            layout.projectDirectory.dir(".swift-sdk-base"),
-            layout.buildDirectory.dir("swiftpackage")
-        )
-    }
-
     commitMessage.set("Update to $version")
+
+    publications {
+        register("swift") {
+            repoUri.set("git@github.com:simplyfi-com/swift-shared.git")
+
+            branch.set("main")
+
+            contents {
+                from(
+                    rootProject.file("LICENSE"),
+                    rootProject.file("VERSION"),
+                    layout.projectDirectory.dir(".swift-sdk-base")
+                )
+                from(layout.buildDirectory.dir("swiftpackage")) {
+                    exclude("sdk-ios-*.zip")
+                }
+            }
+        }
+
+        register("pages") {
+            repoUri.set("git@github.com:simplyfi-com/kotlin-shared.git")
+
+            branch.set("gh-pages")
+
+            contents {
+                from(layout.buildDirectory.dir("dokka/html"))
+            }
+        }
+    }
 }
+
+tasks.getByName("gitPublishCopy").dependsOn("createSwiftPackage")

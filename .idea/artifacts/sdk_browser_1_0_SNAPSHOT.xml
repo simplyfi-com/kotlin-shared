@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="sdk-browser-1.0-SNAPSHOT">
-    <output-path>$PROJECT_DIR$/sdk/build/libs</output-path>
-    <root id="archive" name="sdk-browser-1.0-SNAPSHOT.jar">
-      <element id="module-output" name="kotlin-shared.sdk.browserMain" />
-    </root>
-  </artifact>
-</component>
