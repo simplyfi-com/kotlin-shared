@@ -2,15 +2,12 @@
 
 ## Installation
 
-1. Set env variable `GITLAB_TOKEN` to your token
-
 ### NPM
 
 1. Add `.npmrc` to repository root:
 
 ```text
-@simplyfi:registry=https://gitlab.tenderhub.net/api/v4/projects/309/packages/npm/
-//gitlab.tenderhub.net/api/v4/projects/309/packages/npm/:_authToken="${GITLAB_TOKEN}"
+@simplyfi-com:registry=https://npm.pkg.github.com
 ```
 
 2. Add dependency to `package.json`:
@@ -18,7 +15,7 @@
 ```json
 {
   "dependencies": {
-    "@simplyfi/sdk-browser": "0.0.1"
+    "@simplyfi-com/sdk-browser": "0.0.1"
   }
 }
 ```
@@ -36,15 +33,8 @@ npm install
 ```kotlin
 repositories {
     maven {
-        url = uri("https://gitlab.tenderhub.net/api/v4/projects/309/packages/maven")
-        name = "gitlab"
-        credentials(HttpHeaderCredentials::class) {
-            name = "Private-Token"
-            value = providers.environmentVariable("GITLAB_TOKEN").get()
-        }
-        authentication {
-            create("header", HttpHeaderAuthentication::class)
-        }
+        url = uri("https://maven.pkg.github.com/simplyfi-com/kotlin-shared")
+        name = "github"
     }
 }
 ```
@@ -80,7 +70,7 @@ kotlin {
 
 ### SPM
 
-1. Add packages from `git@gitlab.tenderhub.net:sdk/swift-shared.git`
+1. Add packages from `git@github.com:simplyfi-com/swift-shared.git`
 
 ## Demo
 
