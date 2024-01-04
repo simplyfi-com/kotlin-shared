@@ -235,3 +235,4 @@ gitPublish {
 }
 
 tasks.getByName("gitPublishCopy").dependsOn("createSwiftPackage")
+tasks.getByName("gitPublishPagesCopy").dependsOn("dokkaHtml")
