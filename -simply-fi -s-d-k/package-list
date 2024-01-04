@@ -1,0 +1,80 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.simplyfi.sdk.clients////PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.clients/index.html
+$dokka.location:com.simplyfi.sdk.clients/RoutinesClient///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.clients/-routines-client/index.html
+$dokka.location:com.simplyfi.sdk.clients/RoutinesClient/RoutinesClient/#com.simplyfi.sdk.ClientConfig/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.clients/-routines-client/-routines-client.html
+$dokka.location:com.simplyfi.sdk.clients/RoutinesClient/execute/#kotlin.String#com.simplyfi.sdk.models.core.routines.RoutineExecute#kotlin.String?/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.clients/-routines-client/execute.html
+$dokka.location:com.simplyfi.sdk.clients/RoutinesClient/execute/#kotlin.String#kotlin.Array[kotlin.String]#kotlin.String?/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.clients/-routines-client/execute.html
+$dokka.location:com.simplyfi.sdk.clients/RoutinesClient/get/#kotlin.String#kotlin.String?/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.clients/-routines-client/get.html
+$dokka.location:com.simplyfi.sdk.models.core.routines////PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/index.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Param///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param/index.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Param/Param/#kotlin.Int#kotlin.String#com.simplyfi.sdk.models.core.routines.ParamType#kotlin.Boolean#kotlin.String#kotlin.String/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param/-param.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Param/defaultValue/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param/default-value.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Param/description/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param/description.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Param/name/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param/name.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Param/required/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param/required.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Param/seq/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param/seq.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Param/type/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param/type.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/ParamType.Integer///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param-type/-integer/index.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/ParamType.Numeric///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param-type/-numeric/index.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/ParamType.String///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param-type/-string/index.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/ParamType///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param-type/index.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/ParamType/entries/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param-type/entries.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/ParamType/valueOf/#kotlin.String/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param-type/value-of.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/ParamType/values/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-param-type/values.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Routine///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-routine/index.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Routine/Routine/#kotlin.String#kotlin.String#kotlin.Array[com.simplyfi.sdk.models.core.routines.Param]/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-routine/-routine.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Routine/comment/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-routine/comment.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Routine/equals/#kotlin.Any?/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-routine/equals.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Routine/hashCode/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-routine/hash-code.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Routine/name/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-routine/name.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/Routine/params/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-routine/params.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/RoutineExecute///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-routine-execute/index.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/RoutineExecute/RoutineExecute/#kotlin.Array[kotlin.String]/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-routine-execute/-routine-execute.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/RoutineExecute/equals/#kotlin.Any?/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-routine-execute/equals.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/RoutineExecute/hashCode/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-routine-execute/hash-code.html
+$dokka.location:com.simplyfi.sdk.models.core.routines/RoutineExecute/params/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core.routines/-routine-execute/params.html
+$dokka.location:com.simplyfi.sdk.models.core////PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core/index.html
+$dokka.location:com.simplyfi.sdk.models.core/ApiException///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core/-api-exception/index.html
+$dokka.location:com.simplyfi.sdk.models.core/ApiException/ApiException/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core/-api-exception/-api-exception.html
+$dokka.location:com.simplyfi.sdk.models.core/ApiException/errorCode/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core/-api-exception/error-code.html
+$dokka.location:com.simplyfi.sdk.models.core/ApiException/errorMessage/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core/-api-exception/error-message.html
+$dokka.location:com.simplyfi.sdk.models.core/ApiException/requestId/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core/-api-exception/request-id.html
+$dokka.location:com.simplyfi.sdk.models.core/RunnableResult///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core/-runnable-result/index.html
+$dokka.location:com.simplyfi.sdk.models.core/RunnableResult/RunnableResult/#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.String?/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core/-runnable-result/-runnable-result.html
+$dokka.location:com.simplyfi.sdk.models.core/RunnableResult/errorCode/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core/-runnable-result/error-code.html
+$dokka.location:com.simplyfi.sdk.models.core/RunnableResult/errorMessage/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core/-runnable-result/error-message.html
+$dokka.location:com.simplyfi.sdk.models.core/RunnableResult/message/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core/-runnable-result/message.html
+$dokka.location:com.simplyfi.sdk.models.core/RunnableResult/subject/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core/-runnable-result/subject.html
+$dokka.location:com.simplyfi.sdk.view////PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/index.html
+$dokka.location:com.simplyfi.sdk.view//WebView/#com.simplyfi.sdk.view.ViewConfig#androidx.compose.ui.Modifier#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-web-view.html
+$dokka.location:com.simplyfi.sdk.view//WebViewController/#com.simplyfi.sdk.view.ViewConfig#androidx.compose.ui.Modifier#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-web-view-controller.html
+$dokka.location:com.simplyfi.sdk.view/ViewConfig///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/index.html
+$dokka.location:com.simplyfi.sdk.view/ViewConfig/ViewConfig/#kotlin.String#kotlin.String#com.simplyfi.sdk.view.ViewStrategy#kotlin.Int?#kotlin.String#kotlin.Boolean/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/-view-config.html
+$dokka.location:com.simplyfi.sdk.view/ViewConfig/captureBackPress/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/capture-back-press.html
+$dokka.location:com.simplyfi.sdk.view/ViewConfig/strategy/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/strategy.html
+$dokka.location:com.simplyfi.sdk.view/ViewConfig/token/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/token.html
+$dokka.location:com.simplyfi.sdk.view/ViewConfig/tokenKey/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/token-key.html
+$dokka.location:com.simplyfi.sdk.view/ViewConfig/url/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/url.html
+$dokka.location:com.simplyfi.sdk.view/ViewConfig/viewId/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/view-id.html
+$dokka.location:com.simplyfi.sdk.view/ViewStrategy.EMBED///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-strategy/-e-m-b-e-d/index.html
+$dokka.location:com.simplyfi.sdk.view/ViewStrategy.IFRAME///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-strategy/-i-f-r-a-m-e/index.html
+$dokka.location:com.simplyfi.sdk.view/ViewStrategy///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-strategy/index.html
+$dokka.location:com.simplyfi.sdk.view/ViewStrategy/entries/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-strategy/entries.html
+$dokka.location:com.simplyfi.sdk.view/ViewStrategy/valueOf/#kotlin.String/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-strategy/value-of.html
+$dokka.location:com.simplyfi.sdk.view/ViewStrategy/values/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-strategy/values.html
+$dokka.location:com.simplyfi.sdk////PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk/index.html
+$dokka.location:com.simplyfi.sdk/Client///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk/-client/index.html
+$dokka.location:com.simplyfi.sdk/Client/Client/#com.simplyfi.sdk.ClientConfig/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk/-client/-client.html
+$dokka.location:com.simplyfi.sdk/Client/routines/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk/-client/routines.html
+$dokka.location:com.simplyfi.sdk/ClientConfig///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk/-client-config/index.html
+$dokka.location:com.simplyfi.sdk/ClientConfig/ClientConfig/#kotlin.String#kotlin.String#kotlin.Long/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk/-client-config/-client-config.html
+$dokka.location:com.simplyfi.sdk/ClientConfig/apiKey/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk/-client-config/api-key.html
+$dokka.location:com.simplyfi.sdk/ClientConfig/baseUrl/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk/-client-config/base-url.html
+$dokka.location:com.simplyfi.sdk/ClientConfig/timeout/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk/-client-config/timeout.html
+com.simplyfi.sdk
+com.simplyfi.sdk.clients
+com.simplyfi.sdk.models.core
+com.simplyfi.sdk.models.core.routines
+com.simplyfi.sdk.view
+
