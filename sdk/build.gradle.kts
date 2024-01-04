@@ -206,10 +206,9 @@ tasks.withType<DokkaTask>().configureEach {
 gitPublish {
     commitMessage.set("Update to $version")
 
-    publications {
-        register("swift") {
+    (publications) {
+        "main" {
             repoUri.set("git@github.com:simplyfi-com/swift-shared.git")
-
             branch.set("main")
 
             contents {
@@ -224,9 +223,8 @@ gitPublish {
             }
         }
 
-        register("pages") {
+        create("pages") {
             repoUri.set("git@github.com:simplyfi-com/kotlin-shared.git")
-
             branch.set("gh-pages")
 
             contents {
