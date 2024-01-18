@@ -1,21 +1,25 @@
 package com.simplyfi.sample
 
-import com.simplyfi.sample.models.Route
-import com.simplyfi.sdk.view.ViewStrategy
-import kotlinx.browser.window
+import com.simplyfi.sample.ui.Registration
+import com.simplyfi.sdk.ClientConfig
+import dev.icerock.moko.resources.compose.stringResource
 import org.jetbrains.compose.web.renderComposable
 
-fun main() {
-    renderComposable("root") {
-        App(ViewStrategy.IFRAME) {
-            when (this) {
-                Route.Register -> {
-                    window.history.pushState(null, "Register", "/register")
-                }
-                Route.Onboarding -> {
-                    window.history.pushState(null, "Onboarding", "/onboarding")
-                }
-            }
+@OptIn(ExperimentalJsExport::class)
+@JsExport
+fun RegistrationComponent(rootElementId: String, callback: (token: String, webUrl: String) -> Unit) {
+    renderComposable(rootElementId) {
+        val apiUrl = stringResource(MR.strings.API_URL)
+        val apiKey = stringResource(MR.strings.API_KEY)
+        val webUrl = stringResource(MR.strings.WEB_URL)
+
+        Registration(
+            ClientConfig(
+                apiUrl,
+                apiKey
+            )
+        ) { t, _ ->
+            callback(t, webUrl)
         }
     }
 }

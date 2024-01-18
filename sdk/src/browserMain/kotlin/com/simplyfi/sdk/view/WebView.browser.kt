@@ -13,9 +13,24 @@ import io.ktor.client.request.get
 import io.ktor.client.statement.bodyAsText
 import kotlinx.browser.localStorage
 import org.jetbrains.compose.web.dom.Div
+import org.jetbrains.compose.web.renderComposable
 import org.w3c.dom.Window
 
 internal external val window: dynamic
+
+@OptIn(ExperimentalJsExport::class)
+@JsExport
+fun WebViewComponent(
+    rootElementId: String,
+    config: ViewConfig,
+    modifier: Modifier = Modifier,
+    onCreated: () -> Unit = {},
+    onDispose: () -> Unit = {},
+) {
+    renderComposable(rootElementId) {
+        WebView(config, modifier, onCreated, onDispose)
+    }
+}
 
 @Composable
 actual fun WebView(

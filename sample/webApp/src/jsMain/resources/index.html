@@ -8,4 +8,11 @@
 <div id="root"></div>
 </body>
 <script src="webApp.js"></script>
+<script type="text/javascript">
+    window.onload = (event) => {
+        webApp.com.simplyfi.sample.RegistrationComponent("root", function(token, webUrl) {
+            webApp.com.simplyfi.sdk.WebViewComponent("root", webApp.com.simplyfi.sdk.ViewConfig(webUrl, token))
+        })
+    }
+</script>
 </html>
