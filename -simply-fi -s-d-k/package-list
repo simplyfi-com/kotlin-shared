@@ -48,6 +48,7 @@ $dokka.location:com.simplyfi.sdk.models.core/RunnableResult/message/#/PointingTo
 $dokka.location:com.simplyfi.sdk.models.core/RunnableResult/subject/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.models.core/-runnable-result/subject.html
 $dokka.location:com.simplyfi.sdk.view////PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/index.html
 $dokka.location:com.simplyfi.sdk.view//WebView/#com.simplyfi.sdk.view.ViewConfig#androidx.compose.ui.Modifier#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-web-view.html
+$dokka.location:com.simplyfi.sdk.view//WebViewComponent/#kotlin.String#com.simplyfi.sdk.view.ViewConfig#androidx.compose.ui.Modifier#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-web-view-component.html
 $dokka.location:com.simplyfi.sdk.view//WebViewController/#com.simplyfi.sdk.view.ViewConfig#androidx.compose.ui.Modifier#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-web-view-controller.html
 $dokka.location:com.simplyfi.sdk.view/ViewConfig///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/index.html
 $dokka.location:com.simplyfi.sdk.view/ViewConfig/ViewConfig/#kotlin.String#kotlin.String#com.simplyfi.sdk.view.ViewStrategy#kotlin.Int?#kotlin.String#kotlin.Boolean/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/-view-config.html
