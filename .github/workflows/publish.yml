@@ -28,7 +28,9 @@ jobs:
         uses: gradle/wrapper-validation-action@v1
       - uses: webfactory/ssh-agent@v0.8.0
         with:
-          ssh-private-key: ${{ secrets.SSH_DEPLOY_KEY }}
+          ssh-private-key: |
+            ${{ secrets.SSH_DEPLOY_KEY }}
+            ${{ secrets.SSH_DEPLOY_KOTLIN_KEY }}
       - name: Publish package
         uses: gradle/gradle-build-action@v2
         with:
