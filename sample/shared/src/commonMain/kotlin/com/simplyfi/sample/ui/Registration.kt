@@ -1,8 +1,12 @@
+@file:OptIn(ExperimentalJsExport::class)
+
 package com.simplyfi.sample.ui
 
 import androidx.compose.runtime.Composable
 import com.simplyfi.sample.models.Route
 import com.simplyfi.sdk.ClientConfig
+import kotlin.js.ExperimentalJsExport
+import kotlin.js.JsExport
 import kotlin.random.Random
 
 @Composable

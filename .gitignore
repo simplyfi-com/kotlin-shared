@@ -58,3 +58,7 @@ sample/shared/src/commonMain/resources/MR/base/strings.xml
 **/*.config.d/moko-resources-generated.js
 **/resources/config.json
 .idea/artifacts
+/sample/angularJsApp/node_modules/
+/sample/angularJsApp/app/
+/sample/angularJsApp/config.json
+/sample/angularJsApp/lib/

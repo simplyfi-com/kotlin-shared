@@ -17,6 +17,7 @@ swiftpackage = "2.0.3"
 sdk = "0.0.1"
 dokka = "1.9.10"
 git-piblush = "4.2.1"
+suspend-transform = "0.6.0"
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
@@ -29,6 +30,7 @@ npm-publish = { id = "dev.petuska.npm.publish", version.ref = "npm-publish" }
 multiplatform-swiftpackage = { id = "com.chromaticnoise.multiplatform-swiftpackage", version.ref = "swiftpackage" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 git-publish = { id = "org.ajoberstar.git-publish", version.ref = "git-piblush" }
+suspend-transform = { id = "love.forte.plugin.suspend-transform", version.ref = "suspend-transform" }
 
 [libraries]
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }

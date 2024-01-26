@@ -12,6 +12,7 @@ plugins {
     alias(libs.plugins.multiplatform.swiftpackage)
     alias(libs.plugins.dokka)
     alias(libs.plugins.git.publish)
+    alias(libs.plugins.suspend.transform)
 }
 
 group = "com.simplyfi"
@@ -236,3 +237,7 @@ gitPublish {
 
 tasks.getByName("gitPublishCopy").dependsOn("createSwiftPackage")
 tasks.getByName("gitPublishPagesCopy").dependsOn("dokkaHtml")
+
+suspendTransform {
+    enabled = true
+}
