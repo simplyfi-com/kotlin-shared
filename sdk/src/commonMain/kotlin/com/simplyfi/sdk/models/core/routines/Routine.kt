@@ -1,5 +1,10 @@
 package com.simplyfi.sdk.models.core.routines
 
+import kotlin.js.ExperimentalJsExport
+import kotlin.js.JsExport
+
+@OptIn(ExperimentalJsExport::class)
+@JsExport
 data class Routine(val name: String, val comment: String, val params: Array<Param>) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

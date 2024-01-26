@@ -1,7 +1,11 @@
 package com.simplyfi.sdk.models.core.routines
 
 import kotlinx.serialization.Serializable
+import kotlin.js.ExperimentalJsExport
+import kotlin.js.JsExport
 
+@OptIn(ExperimentalJsExport::class)
+@JsExport
 @Serializable
 data class RoutineExecute(val params: Array<out String>) {
     override fun equals(other: Any?): Boolean {
