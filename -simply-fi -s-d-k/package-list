@@ -1,6 +1,8 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.simplyfi.sdk.clients////PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.clients/index.html
+$dokka.location:com.simplyfi.sdk.clients//executeAsync/com.simplyfi.sdk.clients.RoutinesClient#kotlin.String#com.simplyfi.sdk.models.core.routines.RoutineExecute#kotlin.String?/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.clients/execute-async.html
+$dokka.location:com.simplyfi.sdk.clients//getAsync/com.simplyfi.sdk.clients.RoutinesClient#kotlin.String#kotlin.String?/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.clients/get-async.html
 $dokka.location:com.simplyfi.sdk.clients/RoutinesClient///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.clients/-routines-client/index.html
 $dokka.location:com.simplyfi.sdk.clients/RoutinesClient/RoutinesClient/#com.simplyfi.sdk.ClientConfig/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.clients/-routines-client/-routines-client.html
 $dokka.location:com.simplyfi.sdk.clients/RoutinesClient/execute/#kotlin.String#com.simplyfi.sdk.models.core.routines.RoutineExecute#kotlin.String?/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.clients/-routines-client/execute.html
