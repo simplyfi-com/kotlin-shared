@@ -58,42 +58,46 @@ internal class HttpClient(config: ClientConfig, path: String) {
     }
 
     suspend inline fun <reified T, reified R> post(path: String, payload: T, token: String? = null): R =
-        request(HttpMethod.Post, path, payload, token)
+        client.post {
+            build(this, path, payload, token)
+        }.body()
 
     suspend inline fun <reified T, reified R> put(path: String, payload: T, token: String? = null): R =
-        request(HttpMethod.Put, path, payload, token)
+        client.put {
+            build(this, path, payload, token)
+        }.body()
 
     suspend inline fun <reified T, reified R> patch(path: String, payload: T, token: String? = null): R =
-        request(HttpMethod.Patch, path, payload, token)
+        client.patch {
+            build(this, path, payload, token)
+        }.body()
 
     suspend inline fun <reified R> get(path: String, token: String? = null): R =
-        request(HttpMethod.Get, path, token)
+        client.get {
+            build(this, path, token)
+        }.body()
 
     suspend inline fun <reified R> delete(path: String, token: String? = null): R =
-        request(HttpMethod.Delete, path, token)
+        client.delete {
+            build(this, path, token)
+        }.body()
 
-    suspend inline fun <reified T, reified R> request(method: HttpMethod, path: String, payload: T, token: String? = null): R {
-        return request(method, path, token) {
+    internal inline fun <reified T> build(builder: HttpRequestBuilder, path: String, payload: T, token: String? = null) =
+        build(builder, path, token) {
             if (payload != null) {
                 setBody(payload)
             }
         }
-    }
 
-    suspend inline fun <reified R> request(method: HttpMethod, path: String, token: String? = null): R {
-        return request(method, path, token) {}
-    }
-
-    suspend inline fun <reified R> request(method: HttpMethod, path: String, token: String? = null, build: HttpRequestBuilder.() -> Unit): R {
-        return client.request {
+    internal inline fun build(builder: HttpRequestBuilder, path: String, token: String? = null, callback: HttpRequestBuilder.() -> Unit) {
+        builder.apply {
             url { appendPathSegments(path) }
-            this.method = method
             if (token != null) {
-                headers {
+                io.ktor.http.headers {
                     append("Authorization", "Bearer $token")
                 }
             }
-            build(this)
-        }.body()
+            callback()
+        }
     }
 }
