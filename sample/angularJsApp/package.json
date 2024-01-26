@@ -1,0 +1,27 @@
+{
+  "name": "sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "prestart": "npm run build:dev",
+    "build:dev": "webpack-cli ./main.js -o lib --mode development",
+    "start": "http-server ./ -a localhost -p 8000 -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/simplyfi-com/kotlin-shared"
+  },
+  "author": "German Arutyunov <germanarutyunov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@simplyfi-com/sdk-browser": "0.0.6",
+    "angular": "1.8.x",
+    "angular-route": "1.8.x"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4",
+    "cpx": "^1.5.0",
+    "http-server": "^0.11.2"
+  }
+}

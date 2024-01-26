@@ -62,3 +62,5 @@ sample/shared/src/commonMain/resources/MR/base/strings.xml
 /sample/angularJsApp/app/
 /sample/angularJsApp/config.json
 /sample/angularJsApp/lib/
+/sample/angularJsApp/sample-config.json
+sample/iosApp/.idea

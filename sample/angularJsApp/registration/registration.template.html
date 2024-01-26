@@ -1,0 +1,44 @@
+<div>
+    <div>
+        <h2>Register</h2>
+        <button ng-click="$ctrl.service.random()">Random</button>
+    </div>
+    <div>
+        <form id="register">
+            <div>
+                <label for="companyName">Company Name</label>
+                <input type="text" id="companyName" ng-model="$ctrl.service.companyName">
+            </div>
+            <div>
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" ng-model="$ctrl.service.firstName">
+            </div>
+            <div>
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" ng-model="$ctrl.service.lastName">
+            </div>
+            <div>
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" ng-model="$ctrl.service.phone">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" ng-model="$ctrl.service.email">
+            </div>
+            <div>
+                <label for="tln">CR</label>
+                <input type="text" id="tln" ng-model="$ctrl.service.tln">
+            </div>
+            <div>
+                <label for="secret">Password</label>
+                <input type="password" id="secret" ng-model="$ctrl.service.secret">
+            </div>
+            <div>
+                <label for="compareSecret">Password</label>
+                <input type="password" id="compareSecret" ng-model="$ctrl.service.compareSecret">
+            </div>
+        </form>
+
+        <button form="register" ng-click="$ctrl.register()">Submit</button>
+    </div>
+</div>

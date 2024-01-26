@@ -6,3 +6,8 @@
 ## Installation
 
 1. Add packages from `git@github.com:simplyfi-com/swift-shared.git`
+2. You might need to configure [git-lfs](https://git-lfs.com/)
+
+```shell
+sudo ln -s `which git-lfs` /Applications/Xcode.app/Contents/Developer/usr/libexec/git-core/git-lfs
+```
