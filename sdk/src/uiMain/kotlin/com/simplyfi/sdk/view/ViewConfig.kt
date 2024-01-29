@@ -18,4 +18,10 @@ data class ViewConfig(
     val viewId: Int? = null,
     val tokenKey: String = "sf.go.access",
     val captureBackPress: Boolean = true,
-)
+) {
+    @JsExport.Ignore
+    constructor(
+        url: String,
+        token: String
+    ) : this(url, token, ViewStrategy.EMBED, null, "sf.go.access", true)
+}

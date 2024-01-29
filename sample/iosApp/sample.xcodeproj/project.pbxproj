@@ -3,23 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		C32DCDF42B21180F00E8CA7E /* sampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DCDF32B21180F00E8CA7E /* sampleApp.swift */; };
-		C32DCDF62B21180F00E8CA7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DCDF52B21180F00E8CA7E /* ContentView.swift */; };
 		C32DCDF82B21181500E8CA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C32DCDF72B21181500E8CA7E /* Assets.xcassets */; };
 		C32DCDFB2B21181500E8CA7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C32DCDFA2B21181500E8CA7E /* Preview Assets.xcassets */; };
-		C33A9E3D2B310D6400C5797C /* sdk-ios in Frameworks */ = {isa = PBXBuildFile; productRef = C33A9E3C2B310D6400C5797C /* sdk-ios */; };
+		C35730322B6839E2001228C0 /* sdk-ios in Frameworks */ = {isa = PBXBuildFile; productRef = C35730312B6839E2001228C0 /* sdk-ios */; };
+		C3913B7A2B63C9960086F4E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3913B792B63C9960086F4E4 /* ContentView.swift */; };
+		C3913B7C2B63C9D10086F4E4 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3913B7B2B63C9D10086F4E4 /* RegistrationView.swift */; };
+		C3ABAAF62B680C2200FB8DFE /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ABAAF52B680C2200FB8DFE /* Destination.swift */; };
+		C3F16C972B67CB1D00863BF4 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F16C962B67CB1D00863BF4 /* Strings.swift */; };
+		C3F16C9A2B67EB4600863BF4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F16C992B67EB4600863BF4 /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C32DCDF02B21180F00E8CA7E /* sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32DCDF32B21180F00E8CA7E /* sampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleApp.swift; sourceTree = "<group>"; };
-		C32DCDF52B21180F00E8CA7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcfilelist; };
 		C32DCDF72B21181500E8CA7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C32DCDFA2B21181500E8CA7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C3913B792B63C9960086F4E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C3913B7B2B63C9D10086F4E4 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		C3ABAAF52B680C2200FB8DFE /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		C3F16C962B67CB1D00863BF4 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		C3F16C982B67E84500863BF4 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		C3F16C992B67EB4600863BF4 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		C3F865362B23094100B547EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -28,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C33A9E3D2B310D6400C5797C /* sdk-ios in Frameworks */,
+				C35730322B6839E2001228C0 /* sdk-ios in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,11 +63,16 @@
 		C32DCDF22B21180F00E8CA7E /* sample */ = {
 			isa = PBXGroup;
 			children = (
+				C3F16C982B67E84500863BF4 /* Secrets.xcconfig */,
+				C3F16C952B67CB0300863BF4 /* Utils */,
 				C3F865362B23094100B547EB /* Info.plist */,
 				C32DCDF32B21180F00E8CA7E /* sampleApp.swift */,
-				C32DCDF52B21180F00E8CA7E /* ContentView.swift */,
 				C32DCDF72B21181500E8CA7E /* Assets.xcassets */,
 				C32DCDF92B21181500E8CA7E /* Preview Content */,
+				C3913B792B63C9960086F4E4 /* ContentView.swift */,
+				C3913B7B2B63C9D10086F4E4 /* RegistrationView.swift */,
+				C3F16C992B67EB4600863BF4 /* OnboardingView.swift */,
+				C3ABAAF52B680C2200FB8DFE /* Destination.swift */,
 			);
 			path = sample;
 			sourceTree = "<group>";
@@ -71,6 +85,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C3F16C952B67CB0300863BF4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C3F16C962B67CB1D00863BF4 /* Strings.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,11 +100,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C32DCE142B21181600E8CA7E /* Build configuration list for PBXNativeTarget "sample" */;
 			buildPhases = (
-				C3F865352B23063700B547EB /* Run Script */,
 				C32DCDEC2B21180F00E8CA7E /* Sources */,
 				C32DCDED2B21180F00E8CA7E /* Frameworks */,
 				C32DCDEE2B21180F00E8CA7E /* Resources */,
-				C32DCE1D2B211CFF00E8CA7E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -90,7 +110,7 @@
 			);
 			name = sample;
 			packageProductDependencies = (
-				C33A9E3C2B310D6400C5797C /* sdk-ios */,
+				C35730312B6839E2001228C0 /* sdk-ios */,
 			);
 			productName = sample;
 			productReference = C32DCDF02B21180F00E8CA7E /* sample.app */;
@@ -121,7 +141,7 @@
 			);
 			mainGroup = C32DCDE72B21180F00E8CA7E;
 			packageReferences = (
-				C33A9E3B2B310D6400C5797C /* XCRemoteSwiftPackageReference "swift-shared" */,
+				C35730302B6839E1001228C0 /* XCLocalSwiftPackageReference "../../../swift-shared" */,
 			);
 			productRefGroup = C32DCDF12B21180F00E8CA7E /* Products */;
 			projectDirPath = "";
@@ -144,50 +164,16 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		C32DCE1D2B211CFF00E8CA7E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/zsh;
-			shellScript = "\"$SRCROOT/../../gradlew\" -p \"$SRCROOT/../\" :sample:shared:copyFrameworkResourcesToApp \\\n    -Pmoko.resources.BUILT_PRODUCTS_DIR=\"$BUILT_PRODUCTS_DIR\" \\\n    -Pmoko.resources.CONTENTS_FOLDER_PATH=\"$CONTENTS_FOLDER_PATH\" \\\n    -Pkotlin.native.cocoapods.platform=\"$PLATFORM_NAME\" \\\n    -Pkotlin.native.cocoapods.archs=\"$ARCHS\" \\\n    -Pkotlin.native.cocoapods.configuration=\"$CONFIGURATION\" \n";
-		};
-		C3F865352B23063700B547EB /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/../../gradlew\" -p \"$SRCROOT/../\" :sample:shared:embedAndSignAppleFrameworkForXcode\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		C32DCDEC2B21180F00E8CA7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C32DCDF62B21180F00E8CA7E /* ContentView.swift in Sources */,
+				C3913B7C2B63C9D10086F4E4 /* RegistrationView.swift in Sources */,
+				C3913B7A2B63C9960086F4E4 /* ContentView.swift in Sources */,
+				C3ABAAF62B680C2200FB8DFE /* Destination.swift in Sources */,
+				C3F16C972B67CB1D00863BF4 /* Strings.swift in Sources */,
+				C3F16C9A2B67EB4600863BF4 /* OnboardingView.swift in Sources */,
 				C32DCDF42B21180F00E8CA7E /* sampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +183,7 @@
 /* Begin XCBuildConfiguration section */
 		C32DCE122B21181600E8CA7E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3F16C982B67E84500863BF4 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -262,6 +249,7 @@
 		};
 		C32DCE132B21181600E8CA7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3F16C982B67E84500863BF4 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -403,21 +391,16 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		C33A9E3B2B310D6400C5797C /* XCRemoteSwiftPackageReference "swift-shared" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@gitlab.tenderhub.net:sdk/swift-shared.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		C35730302B6839E1001228C0 /* XCLocalSwiftPackageReference "../../../swift-shared" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../swift-shared";
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C33A9E3C2B310D6400C5797C /* sdk-ios */ = {
+		C35730312B6839E2001228C0 /* sdk-ios */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C33A9E3B2B310D6400C5797C /* XCRemoteSwiftPackageReference "swift-shared" */;
 			productName = "sdk-ios";
 		};
 /* End XCSwiftPackageProductDependency section */

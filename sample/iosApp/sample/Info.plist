@@ -2,24 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>CADisableMinimumFrameDurationOnPhone</key><true/>
+	<key>API_URL</key>
+	<string>$(API_URL)</string>
+	<key>WEB_URL</key>
+	<string>$(WEB_URL)</string>
+	<key>API_KEY</key>
+	<string>$(API_KEY)</string>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
 	<key>NSAppTransportSecurity</key>
-    <dict>
-      <key>NSExceptionDomains</key>
-      <dict>
-        <key>tenderhub.net</key>
-        <dict>
-          <!--Include to allow subdomains-->
-          <key>NSIncludesSubdomains</key>
-          <true/>
-          <!--Include to allow HTTP requests-->
-          <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-          <true/>
-          <!--Include to specify minimum TLS version-->
-          <key>NSTemporaryExceptionMinimumTLSVersion</key>
-          <string>TLSv1.1</string>
-        </dict>
-      </dict>
-    </dict>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>tenderhub.net</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>

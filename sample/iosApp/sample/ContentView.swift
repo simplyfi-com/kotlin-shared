@@ -2,24 +2,24 @@
 //  ContentView.swift
 //  sample
 //
-//  Created by German Arutyunov on 07.12.2023.
+//  Created by German Arutyunov on 26.01.2024.
 //
 
 import SwiftUI
-import shared
-
-struct ComposeView: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> UIViewController {
-        Main_iosKt.MainViewController()
-    }
-
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
-}
 
 struct ContentView: View {
+    @State private var path: Destination = .registration
+    @State private var token: String = ""
+    
     var body: some View {
-        ComposeView()
-                .ignoresSafeArea(.keyboard) // Compose has own keyboard handler
+        NavigationStack() {
+            switch path {
+            case .onboarding:
+                OnboardingView(token: $token)
+            default:
+                RegistrationView(path: $path, token: $token)
+            }
+        }
     }
 }
 
