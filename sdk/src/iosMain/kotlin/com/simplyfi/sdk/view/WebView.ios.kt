@@ -15,12 +15,7 @@ import platform.WebKit.WKWebView
 import platform.WebKit.WKWebViewConfiguration
 import platform.WebKit.javaScriptEnabled
 
-fun WebViewController(
-    config: ViewConfig,
-    modifier: Modifier = Modifier,
-    onCreated: () -> Unit = {},
-    onDispose: () -> Unit = {},
-) = ComposeUIViewController { WebView(config, modifier, onCreated, onDispose) }
+fun WebViewController(config: ViewConfig) = ComposeUIViewController { WebView(config) }
 
 @OptIn(ExperimentalForeignApi::class)
 @Composable
