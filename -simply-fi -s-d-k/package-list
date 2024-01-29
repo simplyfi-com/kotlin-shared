@@ -54,6 +54,7 @@ $dokka.location:com.simplyfi.sdk.view//WebViewComponent/#kotlin.String#com.simpl
 $dokka.location:com.simplyfi.sdk.view//WebViewController/#com.simplyfi.sdk.view.ViewConfig/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-web-view-controller.html
 $dokka.location:com.simplyfi.sdk.view/ViewConfig///PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/index.html
 $dokka.location:com.simplyfi.sdk.view/ViewConfig/ViewConfig/#kotlin.String#kotlin.String#com.simplyfi.sdk.view.ViewStrategy#kotlin.Int?#kotlin.String#kotlin.Boolean/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/-view-config.html
+$dokka.location:com.simplyfi.sdk.view/ViewConfig/ViewConfig/#kotlin.String#kotlin.String/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/-view-config.html
 $dokka.location:com.simplyfi.sdk.view/ViewConfig/captureBackPress/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/capture-back-press.html
 $dokka.location:com.simplyfi.sdk.view/ViewConfig/strategy/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/strategy.html
 $dokka.location:com.simplyfi.sdk.view/ViewConfig/token/#/PointingToDeclaration/-simply-fi -s-d-k/com.simplyfi.sdk.view/-view-config/token.html
