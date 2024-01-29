@@ -215,11 +215,12 @@ gitPublish {
                 from(
                     rootProject.file("LICENSE"),
                     rootProject.file("VERSION"),
-                    layout.projectDirectory.dir(".swift-sdk-base")
+                    layout.projectDirectory.dir(".swift-sdk-base"),
+                    layout.buildDirectory.file("swiftpackage/Package.swift")
                 )
-                from(layout.buildDirectory.dir("swiftpackage")) {
-                    exclude("sdk-ios-*.zip")
-                }
+                from(
+                    layout.buildDirectory.dir("swiftpackage/sdk-ios.xcframework")
+                ).into("sdk-ios.xcframework")
             }
         }
 
