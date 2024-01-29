@@ -191,7 +191,7 @@ tasks.withType<DokkaTask>().configureEach {
         configureEach {
             sourceLink {
                 localDirectory.set(projectDir.resolve("src"))
-                remoteUrl.set(uri("https://github.com/simplyfi-com/kotlin-shared/-/tree/master/sdk/src").toURL())
+                remoteUrl.set(uri("https://github.com/simplyfi-com/kotlin-shared/tree/master/sdk/src").toURL())
                 remoteLineSuffix.set("#L")
             }
         }
