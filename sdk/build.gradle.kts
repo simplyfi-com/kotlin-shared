@@ -218,9 +218,12 @@ gitPublish {
                     layout.projectDirectory.dir(".swift-sdk-base"),
                     layout.buildDirectory.file("swiftpackage/Package.swift")
                 )
+                into("")
+
                 from(
                     layout.buildDirectory.dir("swiftpackage/sdk-ios.xcframework")
-                ).into("sdk-ios.xcframework")
+                )
+                into("sdk-ios.xcframework")
             }
         }
 
