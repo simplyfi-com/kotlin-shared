@@ -85,13 +85,11 @@ struct RegistrationView: View {
         Task {
             let res = try await client.routines.execute(
                 name: "GW.05.0002.00.00.0.00.00.001",
-                payload: RoutineExecute(params: params),
+                params: params,
                 token: nil
             )
-            if let t = res.message {
-                token = t
-                path = .onboarding
-            }
+            token = res.message!
+            path = .onboarding
         }
     }
     
