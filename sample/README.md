@@ -14,7 +14,7 @@ For that add a file in `shared/src/commonMain/resources/MR/base/strings.xml` wit
 
 ## androidApp
 
-An example Android app that uses Jetpack Compose 
+An example [Android app](androidApp/README.md) that uses Jetpack Compose 
 and SimplyFi SDK as Maven [package](https://github.com/simplyfi-com/kotlin-shared/packages/2028535).
 
 ## angularJsApp
@@ -24,9 +24,9 @@ and SimplyFi SDK as NPM [package](https://github.com/simplyfi-com/kotlin-shared/
 
 ## iosApp
 
-An example iOS app that uses SPM [package](https://github.com/simplyfi-com/swift-shared).
+An example [iOS app](iosApp/README.md) that uses SimplyFi SDK as SPM [package](https://github.com/simplyfi-com/swift-shared).
 
 ## webApp
 
-An example Web app that uses KMM and Jetpack Compose for Web 
+An example [Web app](webApp/README.md) that uses KMM and Jetpack Compose for Web 
 and SimplyFi SDK as Maven [package](https://github.com/simplyfi-com/kotlin-shared/packages/2028536).
