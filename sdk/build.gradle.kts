@@ -170,7 +170,7 @@ publishing {
 }
 
 multiplatformSwiftPackage {
-    packageName("sdk-ios")
+    packageName("sdk")
     swiftToolsVersion("5.8")
     targetPlatforms {
         iOS { v("16") }
