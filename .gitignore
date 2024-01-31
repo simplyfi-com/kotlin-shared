@@ -64,3 +64,4 @@ sample/shared/src/commonMain/resources/MR/base/strings.xml
 /sample/angularJsApp/sample-config.json
 sample/iosApp/.idea
 sample/iosApp/sample/Secrets.xcconfig
+/sdk/sdk.podspec

@@ -12,6 +12,9 @@ plugins {
     alias(libs.plugins.multiplatform.swiftpackage)
     alias(libs.plugins.dokka)
     alias(libs.plugins.git.publish)
+    alias(libs.plugins.kmmbridge)
+    alias(libs.plugins.skie)
+    alias(libs.plugins.cocoapods)
 }
 
 group = "com.simplyfi"
@@ -44,13 +47,17 @@ kotlin {
         }
     }
 
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64(),
-    ).forEach {
-        it.binaries.framework {
-            baseName = "sdk"
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
+
+    cocoapods {
+        summary = "SimplyFi SDK"
+        homepage = "https://simplyfi-com.github.io/kotlin-shared"
+        ios.deploymentTarget = "16.0"
+        license = "MIT"
+        extraSpecAttributes.put("swift_version", "\"5.8\"")
+        framework {
             isStatic = true
         }
     }
@@ -169,15 +176,6 @@ publishing {
     }
 }
 
-multiplatformSwiftPackage {
-    packageName("sdk")
-    swiftToolsVersion("5.8")
-    targetPlatforms {
-        iOS { v("16") }
-    }
-    outputDirectory(File(projectDir, "build/swiftpackage"))
-}
-
 buildscript {
     dependencies {
         classpath(libs.dokka.base)
@@ -205,32 +203,19 @@ tasks.withType<DokkaTask>().configureEach {
 
 gitPublish {
     commitMessage.set("Update to $version")
+    repoUri.set("git@github.com:simplyfi-com/kotlin-shared.git")
+    branch.set("gh-pages")
 
-    (publications) {
-        "main" {
-            repoUri.set("git@github.com:simplyfi-com/swift-shared.git")
-            branch.set("main")
-
-            contents {
-                from(
-                    rootProject.file("LICENSE"),
-                    rootProject.file("VERSION"),
-                    layout.projectDirectory.dir(".swift-sdk-base"),
-                    layout.buildDirectory.dir("swiftpackage"),
-                )
-            }
-        }
-
-        create("pages") {
-            repoUri.set("git@github.com:simplyfi-com/kotlin-shared.git")
-            branch.set("gh-pages")
-
-            contents {
-                from(layout.buildDirectory.dir("dokka/html"))
-            }
-        }
+    contents {
+        from(layout.buildDirectory.dir("dokka/html"))
     }
 }
 
-tasks.getByName("gitPublishCopy").dependsOn("createSwiftPackage")
-tasks.getByName("gitPublishPagesCopy").dependsOn("dokkaHtml")
+tasks.getByName("gitPublishCopy").dependsOn("dokkaHtml")
+
+kmmbridge {
+    manualVersions()
+    mavenPublishArtifacts()
+    spm()
+    cocoapods("git@github.com:simplyfi-com/swift-shared.git")
+}
