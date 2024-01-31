@@ -55,7 +55,10 @@ kotlin {
         homepage = "https://simplyfi-com.github.io/kotlin-shared"
         ios.deploymentTarget = "16.0"
         license = "MIT"
-        extraSpecAttributes.put("swift_version", "\"5.8\"")
+        extraSpecAttributes.apply {
+            put("swift_version", "\"5.8\"")
+            put("resources", "[]")
+        }
         framework {
             isStatic = true
         }
