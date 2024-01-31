@@ -8,7 +8,7 @@ on:
       - VERSION
 
 jobs:
-  build:
+  publish:
     runs-on: macos-latest
     permissions:
       contents: write

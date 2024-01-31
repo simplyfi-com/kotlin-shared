@@ -13,8 +13,6 @@ compose = "1.5.11"
 resources = "0.23.0"
 ksoup = "0.3.0"
 npm-publish = "3.4.1"
-swiftpackage = "2.0.3"
-sdk = "0.0.1"
 dokka = "1.9.10"
 git-piblush = "4.2.1"
 kmmBridge = "0.5.1"
@@ -28,7 +26,6 @@ android-application = { id = "com.android.application", version.ref = "android" 
 jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose" }
 multiplatform-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "resources" }
 npm-publish = { id = "dev.petuska.npm.publish", version.ref = "npm-publish" }
-multiplatform-swiftpackage = { id = "com.chromaticnoise.multiplatform-swiftpackage", version.ref = "swiftpackage" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 git-publish = { id = "org.ajoberstar.git-publish", version.ref = "git-piblush" }
 kmmbridge = { id = "co.touchlab.kmmbridge", version.ref = "kmmBridge" }
@@ -54,4 +51,3 @@ resources-generator = { module = "dev.icerock.moko:resources-generator", version
 resources = { module = "dev.icerock.moko:resources", version.ref = "resources" }
 resources-compose = { module = "dev.icerock.moko:resources-compose", version.ref = "resources" }
 ksoup = { module = "com.mohamedrejeb.ksoup:ksoup-html", version.ref = "ksoup" }
-sdk = { module = "com.simplyfi:sdk", version.ref = "sdk" }

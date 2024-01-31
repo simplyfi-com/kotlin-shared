@@ -9,7 +9,6 @@ plugins {
     alias(libs.plugins.jetbrains.compose)
     `maven-publish`
     alias(libs.plugins.npm.publish)
-    alias(libs.plugins.multiplatform.swiftpackage)
     alias(libs.plugins.dokka)
     alias(libs.plugins.git.publish)
     alias(libs.plugins.kmmbridge)
