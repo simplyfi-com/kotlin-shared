@@ -29,6 +29,11 @@ jobs:
       - uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.SSH_DEPLOY_KEY }}
+      - uses: extractions/netrc@v1
+        with:
+          machine: maven.pkg.github.com
+          username: cirunner
+          password: ${{ secrets.GITHUB_TOKEN  }}
       - name: Publish package
         uses: gradle/gradle-build-action@v2
         with:
