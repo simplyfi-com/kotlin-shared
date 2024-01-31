@@ -26,6 +26,13 @@ jobs:
       - uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.SSH_DEPLOY_KOTLIN_KEY }}
+      - name: Cache build tooling
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.konan
+          key: ${{ runner.os }}-v4-${{ hashFiles('*.gradle.kts') }}
       - name: Publish docs
         uses: gradle/gradle-build-action@v2
         with:

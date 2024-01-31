@@ -34,6 +34,13 @@ jobs:
           machine: maven.pkg.github.com
           username: cirunner
           password: ${{ secrets.GITHUB_TOKEN  }}
+      - name: Cache build tooling
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.konan
+          key: ${{ runner.os }}-v4-${{ hashFiles('*.gradle.kts') }}
       - name: Publish package
         uses: gradle/gradle-build-action@v2
         with:
