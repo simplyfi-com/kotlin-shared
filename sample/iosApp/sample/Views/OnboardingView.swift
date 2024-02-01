@@ -15,7 +15,11 @@ struct WebView: UIViewControllerRepresentable {
          WebView_iosKt.WebViewController(
             config: ViewConfig(
                 url: resourceString("WEB_URL"),
-                token: token
+                token: token,
+                strategy: .embed,
+                viewId: nil,
+                tokenKey: "sf.go.access",
+                captureBackPress: true
             )
         )
     }

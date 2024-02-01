@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var token: String = ""
     
     var body: some View {
-        NavigationStack() {
+        NavigationStack {
             switch path {
             case .onboarding:
                 OnboardingView(token: $token)
@@ -21,8 +21,4 @@ struct ContentView: View {
             }
         }
     }
-}
-
-#Preview {
-    ContentView()
 }

@@ -53,9 +53,9 @@ kotlin {
     cocoapods {
         summary = "SimplyFi SDK"
         homepage = "https://simplyfi-com.github.io/kotlin-shared"
-        ios.deploymentTarget = "16.0"
+        ios.deploymentTarget = "13.0"
         license = "MIT"
-        extraSpecAttributes.put("swift_version", "\"5.8\"")
+        extraSpecAttributes.put("swift_version", "\"5.0\"")
         framework {
             isStatic = true
         }
