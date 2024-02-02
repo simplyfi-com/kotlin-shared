@@ -11,7 +11,8 @@ angular.
       function OnboardingController($rootScope, Registration) {
         const config = new com.simplyfi.sdk.view.ViewConfig(
             $rootScope.config.webUrl,
-            Registration.token
+            Registration.token,
+            com.simplyfi.sdk.view.ViewStrategy.IFRAME
         )
 
         com.simplyfi.sdk.view.WebViewComponent("root", config)
