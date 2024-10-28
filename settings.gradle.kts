@@ -14,6 +14,12 @@ pluginManagement {
 
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.5.0"
+    id("com.gradle.develocity") version "3.18.1"
+}
+
+develocity {
+    termsOfUseUrl.set("https://gradle.com/help/legal-terms-of-use")
+    termsOfUseAgree.set("yes")
 }
 
 dependencyResolutionManagement {
